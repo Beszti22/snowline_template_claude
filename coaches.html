@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snowline Ski Club — Alpine Racing, Freestyle & Youth Programs</title>
-<meta name="description" content="Community alpine ski club: race training, freestyle coaching and youth development for every level.">
+<title>Coaches — Snowline Ski Club</title>
+<meta name="description" content="Licensed, background-checked coaches with decades of combined racing and instruction experience.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="/programs.html" data-i18n="navPrograms">Programs</a>
-      <a href="/coaches.html" data-i18n="navCoaches">Coaches</a>
+      <a href="/coaches.html" aria-current="page" data-i18n="navCoaches">Coaches</a>
       <a href="/schedule.html" data-i18n="navSchedule">Schedule</a>
       <a href="/gallery.html" data-i18n="navGallery">Gallery</a>
       <a href="/about.html" data-i18n="navAbout">About</a>
@@ -48,66 +48,54 @@
 
 <main id="main">
 
-<!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-visual">
-      <img src="/assets/hero-banner.jpg" alt="Snowline ski racers training on the mountain">
-    </div>
-
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <span class="eyebrow" data-i18n="heroEyebrow">Snowline Ski Club · Est. 2010</span>
-        <h1 data-i18n="heroH1">Train hard.<br>Ride <span>free.</span></h1>
-        <p class="hero-sub" data-i18n="heroSub">Alpine racing, freestyle and youth development programs for skiers of every level, led by certified coaches who love the mountain as much as you do.</p>
-        <div class="hero-ctas">
-          <a href="/contact.html" class="btn btn-primary">
-            <span data-i18n="heroCta1">Register for Season</span>
-            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="/programs.html" class="btn btn-outline" data-i18n="heroCta2">Explore Programs</a>
+<!-- COACHES -->
+  <section class="coaches" id="coaches">
+    <div class="container">
+      <div class="section-head reveal reveal-blur">
+        <span class="eyebrow" data-i18n="coachesEyebrow">Our staff</span>
+        <h2 data-i18n="coachesH2">Meet Your Coaches</h2>
+        <p data-i18n="coachesLead">Licensed, background-checked coaches with decades of combined racing and instruction experience.</p>
+      </div>
+      <div class="coach-grid">
+        <div class="coach-card reveal">
+          <div class="coach-avatar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+          <h3 data-i18n="coach1name">[Coach Name]</h3>
+          <span class="coach-role" data-i18n="coach1role">Head Coach, Alpine</span>
+          <p data-i18n="coach1bio">Former national team member, USSA Level 300 certified.</p>
+          <div class="coach-social">
+            <a href="#" aria-label="[Coach Name] on Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Email [Coach Name]"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="hero-stats reveal">
-      <div><strong data-count="15" data-suffix="+">15+</strong><span data-i18n="heroStat1">Years Running</span></div>
-      <div><strong data-count="420">420</strong><span data-i18n="heroStat2">Active Athletes</span></div>
-      <div><strong data-count="38">38</strong><span data-i18n="heroStat3">Regional Medals</span></div>
-      <div><strong data-count="12">12</strong><span data-i18n="heroStat4">Certified Coaches</span></div>
-    </div>
-  </section>
-
-<!-- VALUE STRIP -->
-  <section class="value-strip">
-    <div class="container value-grid">
-      <div class="value-item reveal">
-        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1z"/></svg></span>
-        <div><strong data-i18n="valueItem1Title">Certified Coaches</strong><span data-i18n="valueItem1Desc">National-level licensed staff</span></div>
-      </div>
-      <div class="value-item reveal">
-        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></span>
-        <div><strong data-i18n="valueItem2Title">All Skill Levels</strong><span data-i18n="valueItem2Desc">First turns to race gates</span></div>
-      </div>
-      <div class="value-item reveal">
-        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21l4-13 4 13"/><path d="M3 21l6-13 3 4"/></svg></span>
-        <div><strong data-i18n="valueItem3Title">Alpine & Freestyle</strong><span data-i18n="valueItem3Desc">Race and terrain-park tracks</span></div>
-      </div>
-      <div class="value-item reveal">
-        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg></span>
-        <div><strong data-i18n="valueItem4Title">Safety First</strong><span data-i18n="valueItem4Desc">Small groups, full gear checks</span></div>
-      </div>
-    </div>
-  </section>
-
-<!-- CTA BANNER -->
-  <section style="padding:0;">
-    <div class="cta-banner reveal">
-      <div class="cta-banner-inner">
-        <h2 data-i18n="ctaH2">Ready to hit the slopes?</h2>
-        <p data-i18n="ctaLead">Registration for the upcoming season is open now. Spots fill fast — secure your athlete's place today.</p>
-        <div class="cta-actions">
-          <a href="/contact.html" class="btn btn-primary" data-i18n="ctaBtn1">Register Now</a>
-          <a href="tel:+10000000000" class="btn btn-outline" data-i18n="ctaBtn2">Call the Club</a>
+        <div class="coach-card reveal">
+          <div class="coach-avatar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+          <h3 data-i18n="coach2name">[Coach Name]</h3>
+          <span class="coach-role" data-i18n="coach2role">Freestyle Lead</span>
+          <p data-i18n="coach2bio">X Games park coach, 10+ years in freestyle development.</p>
+          <div class="coach-social">
+            <a href="#" aria-label="[Coach Name] on Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Email [Coach Name]"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+          </div>
+        </div>
+        <div class="coach-card reveal">
+          <div class="coach-avatar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+          <h3 data-i18n="coach3name">[Coach Name]</h3>
+          <span class="coach-role" data-i18n="coach3role">Youth Program Director</span>
+          <p data-i18n="coach3bio">Specializes in youth motor skills and on-snow confidence.</p>
+          <div class="coach-social">
+            <a href="#" aria-label="[Coach Name] on Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Email [Coach Name]"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+          </div>
+        </div>
+        <div class="coach-card reveal">
+          <div class="coach-avatar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+          <h3 data-i18n="coach4name">[Coach Name]</h3>
+          <span class="coach-role" data-i18n="coach4role">Strength & Conditioning</span>
+          <p data-i18n="coach4bio">Runs dryland training and injury-prevention programming.</p>
+          <div class="coach-social">
+            <a href="#" aria-label="[Coach Name] on Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Email [Coach Name]"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
