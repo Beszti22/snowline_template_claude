@@ -204,40 +204,6 @@
       linear-gradient(100deg, rgba(6,14,28,0.94) 0%, rgba(6,14,28,0.74) 26%, rgba(6,14,28,0.16) 52%, transparent 68%),
       linear-gradient(0deg, rgba(6,14,28,0.5) 0%, transparent 34%);
   }
-
-  /* ---------- ANIMATED SKIER CARVE ---------- */
-  .ski-scene{
-    position:absolute;left:0;right:0;bottom:5%;height:40%;z-index:1;pointer-events:none;overflow:hidden;
-  }
-  .ski-scene svg{position:absolute;inset:0;width:100%;height:100%;}
-  .ski-scene.ski-paused *{animation-play-state:paused;}
-  .carve-path{fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke;}
-  .carve-base{stroke:rgba(234,240,248,0.12);stroke-width:2;}
-  .carve-line{
-    stroke:#FFFFFF;stroke-width:4.5;opacity:.95;
-    stroke-dasharray:260 2200;stroke-dashoffset:2460;
-    animation:carveDraw var(--ski-dur,10s) linear infinite;
-  }
-  .carve-line--2{stroke-width:2.4;opacity:.45;animation-delay:.06s;}
-  .carve-glow{stroke:var(--color-accent);stroke-width:9;opacity:.28;filter:blur(1px);stroke-dasharray:260 2200;stroke-dashoffset:2460;animation:carveDraw var(--ski-dur,10s) linear infinite;}
-  .ski-rider{filter:drop-shadow(0 0 3px rgba(10,26,48,0.9)) drop-shadow(0 4px 6px rgba(6,14,28,0.7));}
-  .ski-spray circle{transform-box:fill-box;transform-origin:center;animation:skiPuff 1s ease-out infinite;}
-  .ski-spray circle:nth-child(2){animation-delay:.16s;}
-  .ski-spray circle:nth-child(3){animation-delay:.32s;}
-
-  @keyframes carveDraw{from{stroke-dashoffset:2460;}to{stroke-dashoffset:0;}}
-  @keyframes skiPuff{
-    0%{opacity:0;transform:scale(.3);}
-    25%{opacity:.95;}
-    100%{opacity:0;transform:scale(2.4) translate(-8px,-7px);}
-  }
-  @media (max-width:760px){ .ski-scene{height:42%;} }
-  @media (prefers-reduced-motion: reduce){
-    .carve-line,.carve-glow,.ski-spray circle{animation:none;}
-    .carve-line{opacity:.45;stroke-dasharray:none;stroke-dashoffset:0;}
-    .carve-glow,.ski-spray{display:none;}
-  }
-
   .hero-inner{
     position:absolute;inset:0;z-index:2;display:flex;align-items:center;text-align:left;padding-top:76px;
   }
@@ -616,41 +582,6 @@
       <div><strong data-count="420">420</strong><span data-i18n="heroStat2">Active Athletes</span></div>
       <div><strong data-count="38">38</strong><span data-i18n="heroStat3">Regional Medals</span></div>
       <div><strong data-count="12">12</strong><span data-i18n="heroStat4">Certified Coaches</span></div>
-    </div>
-    <div class="ski-scene" aria-hidden="true">
-      <svg viewBox="0 0 1280 340" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path id="carveP" class="carve-path carve-base" d="M-100 150 C 250 34,450 258,700 122 S 1120 34,1400 150"/>
-        <path class="carve-path carve-glow" d="M-100 150 C 250 34,450 258,700 122 S 1120 34,1400 150"/>
-        <path class="carve-path carve-line" d="M-100 150 C 250 34,450 258,700 122 S 1120 34,1400 150"/>
-        <path class="carve-path carve-line carve-line--2" d="M-100 164 C 250 48,450 272,700 136 S 1120 48,1400 164"/>
-        <g class="ski-spray" fill="#FFFFFF">
-          <circle cx="0" cy="2" r="15"/>
-          <circle cx="-13" cy="-6" r="10"/>
-          <circle cx="9" cy="-11" r="8"/>
-          <circle cx="-2" cy="-16" r="6"/>
-          <animateMotion dur="10s" begin="-0.34s" repeatCount="indefinite" rotate="0"><mpath href="#carveP"/></animateMotion>
-        </g>
-        <g class="ski-rider">
-         <g transform="scale(1.3)">
-          <path d="M-26 12 L26 10" stroke="#0A1A30" stroke-width="6" stroke-linecap="round"/>
-          <path d="M24 7 l14 -4 2 5 -13 6z" fill="#0A1A30"/>
-          <path d="M-22 18 L30 16" stroke="#12263F" stroke-width="5.5" stroke-linecap="round"/>
-          <path d="M28 13 l14 -4 2 5 -13 6z" fill="#12263F"/>
-          <path d="M22 9 l11 -3 1.6 4 -10 5z" fill="#FF5A36"/>
-          <path d="M4 12 L12 -5 L2 -14" stroke="#F4F7FB" stroke-width="8.5" stroke-linecap="round"/>
-          <path d="M2 -14 C -4 -19 -10 -24 -16 -26" stroke="#F4F7FB" stroke-width="9.5" stroke-linecap="round"/>
-          <path d="M-5 -16 C -2 -21 -1 -27 -2 -32" stroke="#38BDF8" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
-          <path d="M-7 -18 C 2 -14 10 -8 16 -6" stroke="#F4F7FB" stroke-width="6.5" stroke-linecap="round"/>
-          <path d="M16 -6 L -10 -28" stroke="#0A1A30" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="-9" cy="-27" r="3" fill="#0A1A30"/>
-          <circle cx="17" cy="-6" r="3.6" fill="#0A1A30"/>
-          <circle cx="-20" cy="-30" r="8.5" fill="#FF5A36"/>
-          <path d="M-27 -33 q7 -4 14 -1" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" opacity=".5"/>
-          <rect x="-29" y="-33" width="16" height="6" rx="3" fill="#0A1A30" transform="rotate(-8 -20 -30)"/>
-         </g>
-          <animateMotion dur="10s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#carveP"/></animateMotion>
-        </g>
-      </svg>
     </div>
   </section>
 
@@ -1445,30 +1376,6 @@
     if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
   }, { passive: true });
   onScroll();
-
-  /* ----- Skier carve: pause off-screen, speed up while scrolling ----- */
-  var skiScene = document.querySelector('.ski-scene');
-  var skiSVG = skiScene && skiScene.querySelector('svg');
-  if(skiScene && prefersReduced && skiSVG){
-    try{ skiSVG.pauseAnimations(); skiSVG.setCurrentTime(6); }catch(e){}
-  }
-  if(skiScene && !prefersReduced){
-    var heroEl2 = document.querySelector('.hero');
-    if('IntersectionObserver' in window && heroEl2){
-      new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          skiScene.classList.toggle('ski-paused', !e.isIntersecting);
-          if(skiSVG){ try{ e.isIntersecting ? skiSVG.unpauseAnimations() : skiSVG.pauseAnimations(); }catch(x){} }
-        });
-      }, { threshold: 0 }).observe(heroEl2);
-    }
-    var skiIdle;
-    window.addEventListener('scroll', function(){
-      skiScene.style.setProperty('--ski-dur', '6s');
-      clearTimeout(skiIdle);
-      skiIdle = setTimeout(function(){ skiScene.style.setProperty('--ski-dur', '10s'); }, 500);
-    }, { passive: true });
-  }
 })();
 </script>
 
