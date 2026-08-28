@@ -9,28 +9,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --color-primary:#0B1B33;
+    --color-primary:#0A1A30;
     --color-primary-light:#16294A;
     --color-primary-soft:#22345A;
     --color-background:#FFFFFF;
-    --color-surface:#F3F6FB;
+    --color-surface:#F4F7FB;
+    --color-surface-2:#EAF0F8;
     --color-accent:#FF5A36;
-    --color-accent-dark:#E14319;
+    --color-accent-dark:#DD3E15;
     --color-ice:#38BDF8;
-    --color-text:#0B1B33;
-    --color-text-muted:#55677E;
-    --color-border:#E2E8F0;
+    --color-text:#0A1A30;
+    --color-text-muted:#54657C;
+    --color-border:#E4EAF2;
     --color-on-primary:#FFFFFF;
     --color-on-accent:#FFFFFF;
     --font-display:'Bebas Neue', sans-serif;
     --font-body:'Inter', sans-serif;
-    --radius-sm:8px;
-    --radius-md:14px;
-    --radius-lg:24px;
-    --shadow-sm:0 2px 8px rgba(11,27,51,0.06);
-    --shadow-md:0 12px 32px rgba(11,27,51,0.12);
+    --radius-sm:10px;
+    --radius-md:16px;
+    --radius-lg:26px;
+    --shadow-sm:0 1px 2px rgba(10,26,48,0.04), 0 4px 12px rgba(10,26,48,0.06);
+    --shadow-md:0 8px 24px rgba(10,26,48,0.10), 0 24px 48px rgba(10,26,48,0.10);
+    --shadow-lg:0 12px 32px rgba(10,26,48,0.14), 0 40px 80px rgba(10,26,48,0.16);
     --container:1200px;
-    --nav-h:76px;
+    --nav-h:80px;
+    --nav-h-scrolled:64px;
+    --ease-out:cubic-bezier(0.16,1,0.3,1);
+    --ease-in-out:cubic-bezier(0.65,0,0.35,1);
   }
 
   *,*::before,*::after{box-sizing:border-box;}
@@ -72,22 +77,30 @@
     font-family:var(--font-body);font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
     font-size:13px;color:var(--color-accent);
   }
-  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
-  .section-head .eyebrow{display:block;margin-bottom:12px;}
-  .section-head h2{font-size:clamp(32px,5vw,48px);color:var(--color-primary);}
-  .section-head p{margin-top:16px;color:var(--color-text-muted);font-size:17px;}
-  section{padding:88px 0;}
+  .section-head{max-width:660px;margin:0 auto 56px;text-align:center;}
+  .section-head .eyebrow{display:block;margin-bottom:14px;}
+  .section-head h2{font-size:clamp(32px,5vw,50px);color:var(--color-primary);letter-spacing:0.015em;}
+  .section-head p{margin-top:18px;color:var(--color-text-muted);font-size:17px;line-height:1.65;}
+  .section-head .eyebrow::before{
+    content:"";display:inline-block;width:28px;height:2px;background:var(--color-accent);
+    vertical-align:middle;margin-right:10px;transform:translateY(-2px);
+  }
+  section{padding:96px 0;}
   @media (max-width:768px){ section{padding:64px 0;} }
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    padding:15px 28px;border-radius:100px;font-weight:700;font-size:15px;
-    border:2px solid transparent;transition:transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+    padding:15px 28px;border-radius:100px;font-weight:700;font-size:15px;letter-spacing:0.01em;
+    border:2px solid transparent;
+    transition:transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out), background-color 200ms ease, color 200ms ease;
     min-height:44px;white-space:nowrap;
   }
   .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--color-accent);color:var(--color-on-accent);box-shadow:0 8px 20px rgba(255,90,54,0.35);}
-  .btn-primary:hover{background:var(--color-accent-dark);}
+  .btn:active{transform:translateY(0);}
+  .btn .icon{transition:transform 260ms var(--ease-out);}
+  .btn:hover .icon{transform:translateX(3px);}
+  .btn-primary{background:var(--color-accent);color:var(--color-on-accent);box-shadow:0 10px 24px rgba(255,90,54,0.32);}
+  .btn-primary:hover{background:var(--color-accent-dark);box-shadow:0 16px 34px rgba(255,90,54,0.4);}
   .btn-outline{border-color:rgba(255,255,255,0.6);color:#fff;}
   .btn-outline:hover{background:rgba(255,255,255,0.12);}
   .btn-dark-outline{border-color:var(--color-primary);color:var(--color-primary);}
@@ -99,20 +112,31 @@
   header.site-header{
     position:sticky;top:0;z-index:500;
     border-bottom:1px solid rgba(255,255,255,0.08);
+    transition:border-color 300ms ease;
   }
+  header.site-header.scrolled{border-bottom-color:rgba(255,255,255,0.12);}
   /* Blur lives on a pseudo-element (not the header itself) so header never
      becomes a containing block for its fixed-position mobile nav panel —
      backdrop-filter/transform/filter on an ancestor would otherwise hijack
      position:fixed descendants away from the viewport. */
   header.site-header::before{
     content:"";position:absolute;inset:0;z-index:-1;
-    background:rgba(11,27,51,0.85);
+    background:rgba(10,26,48,0.7);
     backdrop-filter:blur(10px);
     -webkit-backdrop-filter:blur(10px);
+    transition:background-color 300ms ease, box-shadow 300ms ease;
+  }
+  header.site-header.scrolled::before{
+    background:rgba(10,26,48,0.92);
+    box-shadow:0 8px 30px rgba(6,14,28,0.35);
   }
   .nav{
     height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;
+    transition:height 300ms var(--ease-out);
   }
+  header.site-header.scrolled .nav{height:var(--nav-h-scrolled);}
+  .brand,.nav .icon{transition:transform 300ms var(--ease-out);}
+  header.site-header.scrolled .brand{transform:scale(0.92);}
   .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-display);font-size:26px;letter-spacing:0.06em;}
   .brand .icon{width:30px;height:30px;color:var(--color-ice);}
   .nav-links{display:flex;align-items:center;gap:36px;}
@@ -168,10 +192,17 @@
   .hero-visual{
     position:relative;width:100%;aspect-ratio:1920/1071;max-height:760px;overflow:hidden;background:#0B1B33;
   }
-  .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;}
+  .hero-visual img{
+    width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;
+    will-change:transform;
+  }
+  /* JS sets --parallax (px); scale gives headroom so the shift never shows an edge */
+  .hero-visual img{transform:translate3d(0,var(--parallax,0px),0) scale(1.14);}
   .hero-visual::after{
     content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(100deg, rgba(6,14,28,0.92) 0%, rgba(6,14,28,0.7) 26%, rgba(6,14,28,0.14) 52%, transparent 68%);
+    background:
+      linear-gradient(100deg, rgba(6,14,28,0.94) 0%, rgba(6,14,28,0.74) 26%, rgba(6,14,28,0.16) 52%, transparent 68%),
+      linear-gradient(0deg, rgba(6,14,28,0.5) 0%, transparent 34%);
   }
   .hero-inner{
     position:absolute;inset:0;z-index:2;display:flex;align-items:center;text-align:left;padding-top:76px;
@@ -186,6 +217,16 @@
     max-width:460px;margin:20px 0 0;color:rgba(255,255,255,0.85);font-size:17px;
   }
   .hero-ctas{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap;margin-top:32px;}
+  /* Hero intro — children rise in on load, staggered */
+  .hero-text > *{opacity:0;transform:translateY(24px);animation:heroIn 800ms var(--ease-out) forwards;}
+  .hero-text > *:nth-child(1){animation-delay:120ms;}
+  .hero-text > *:nth-child(2){animation-delay:240ms;}
+  .hero-text > *:nth-child(3){animation-delay:360ms;}
+  .hero-text > *:nth-child(4){animation-delay:480ms;}
+  @keyframes heroIn{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion: reduce){
+    .hero-text > *{opacity:1 !important;transform:none !important;animation:none !important;}
+  }
   .hero-stats{
     position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);
     border-top:1px solid rgba(255,255,255,0.14);
@@ -257,13 +298,16 @@
   .card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
   .program-card{
     background:#fff;border-radius:var(--radius-md);padding:30px 24px;box-shadow:var(--shadow-sm);
-    transition:transform 220ms ease, box-shadow 220ms ease;border:1px solid var(--color-border);
+    transition:transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out), border-color 300ms ease;
+    border:1px solid var(--color-border);position:relative;
   }
-  .program-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+  .program-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:#D4DEEC;}
   .program-card .icon-badge{
     width:52px;height:52px;border-radius:var(--radius-sm);background:var(--color-primary);color:var(--color-ice);
     display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    transition:transform 300ms var(--ease-out), background-color 300ms ease;
   }
+  .program-card:hover .icon-badge{transform:translateY(-2px) scale(1.05);background:var(--color-primary-light);}
   .program-card h3{font-family:var(--font-body);font-weight:800;text-transform:none;letter-spacing:0;font-size:19px;color:var(--color-primary);}
   .program-age{display:inline-block;margin:10px 0 12px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:var(--color-accent);background:#FFF1EC;padding:4px 10px;border-radius:100px;}
   .program-card p{color:var(--color-text-muted);font-size:14.5px;margin-bottom:16px;}
@@ -439,18 +483,44 @@
     .footer-grid{grid-template-columns:1fr;}
   }
 
-  /* ---------- REVEAL ANIMATION ---------- */
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity 600ms ease, transform 600ms ease;}
-  .reveal.in-view{opacity:1;transform:translateY(0);}
+  /* ---------- SCROLL PROGRESS BAR ---------- */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;width:100%;z-index:900;
+    transform:scaleX(0);transform-origin:0 50%;
+    background:linear-gradient(90deg,var(--color-accent),var(--color-ice));
+    transition:transform 80ms linear;pointer-events:none;
+  }
+
+  /* ---------- REVEAL / SCROLL ANIMATION ---------- */
+  .reveal{
+    opacity:0;transform:translateY(32px);
+    transition:opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+    transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform;
+  }
+  .reveal.in-view{opacity:1;transform:none;}
+  .reveal-left{transform:translateX(-40px);}
+  .reveal-right{transform:translateX(40px);}
+  .reveal-scale{transform:scale(0.94);}
+  .reveal-blur{filter:blur(6px);transition:opacity 700ms var(--ease-out), transform 700ms var(--ease-out), filter 700ms var(--ease-out);}
+  .reveal-blur.in-view{filter:blur(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-blur{
+      opacity:1 !important;transform:none !important;filter:none !important;transition:none !important;
+    }
+    .scroll-progress{display:none;}
+  }
 
   /* ---------- TEMPLATE NOTE ---------- */
   .template-note{
-    background:#FFF7ED;border-bottom:1px solid #FED7AA;color:#7C2D12;font-size:13px;text-align:center;
-    padding:8px 16px;
+    background:#FFF7ED;border-bottom:1px solid #FED7AA;color:#7C2D12;font-size:12.5px;text-align:center;
+    padding:7px 16px;letter-spacing:0.01em;
   }
 </style>
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
 
@@ -507,11 +577,11 @@
       </div>
     </div>
 
-    <div class="hero-stats">
-      <div><strong>15+</strong><span data-i18n="heroStat1">Years Running</span></div>
-      <div><strong>420</strong><span data-i18n="heroStat2">Active Athletes</span></div>
-      <div><strong>38</strong><span data-i18n="heroStat3">Regional Medals</span></div>
-      <div><strong>12</strong><span data-i18n="heroStat4">Certified Coaches</span></div>
+    <div class="hero-stats reveal">
+      <div><strong data-count="15" data-suffix="+">15+</strong><span data-i18n="heroStat1">Years Running</span></div>
+      <div><strong data-count="420">420</strong><span data-i18n="heroStat2">Active Athletes</span></div>
+      <div><strong data-count="38">38</strong><span data-i18n="heroStat3">Regional Medals</span></div>
+      <div><strong data-count="12">12</strong><span data-i18n="heroStat4">Certified Coaches</span></div>
     </div>
   </section>
 
@@ -540,14 +610,14 @@
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container about-grid">
-      <div class="about-media reveal">
+      <div class="about-media reveal reveal-left">
         <div class="placeholder-block">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
           <small data-i18n="aboutMediaLabel">Club / team photo</small>
         </div>
         <div class="badge-since"><strong>2010</strong><span data-i18n="foundedLabel">Founded</span></div>
       </div>
-      <div class="about-copy reveal">
+      <div class="about-copy reveal reveal-right">
         <span class="eyebrow" data-i18n="aboutEyebrow">About the club</span>
         <h2 data-i18n="aboutH2">Built by skiers, for skiers</h2>
         <p data-i18n="aboutP1">Snowline Ski Club started with a handful of families sharing one van and one dream — to make competitive and recreational skiing accessible to every kid on the mountain. Today we run year-round conditioning, on-snow training camps and a full regional race calendar.</p>
@@ -564,7 +634,7 @@
   <!-- PROGRAMS -->
   <section class="programs" id="programs">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal-blur">
         <span class="eyebrow" data-i18n="programsEyebrow">What we offer</span>
         <h2 data-i18n="programsH2">Our Programs</h2>
         <p data-i18n="programsLead">Structured pathways for every age and ambition, from first-timers to podium contenders.</p>
@@ -605,7 +675,7 @@
   <!-- COACHES -->
   <section class="coaches" id="coaches">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal-blur">
         <span class="eyebrow" data-i18n="coachesEyebrow">Our staff</span>
         <h2 data-i18n="coachesH2">Meet Your Coaches</h2>
         <p data-i18n="coachesLead">Licensed, background-checked coaches with decades of combined racing and instruction experience.</p>
@@ -658,7 +728,7 @@
   <!-- SCHEDULE -->
   <section class="schedule" id="schedule" style="background:var(--color-surface);">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal-blur">
         <span class="eyebrow" data-i18n="scheduleEyebrow">Stay on track</span>
         <h2 data-i18n="scheduleH2">Season Schedule</h2>
         <p data-i18n="scheduleLead">Upcoming trainings, races and club events. Full calendar shared with registered families.</p>
@@ -696,7 +766,7 @@
   <!-- GALLERY -->
   <section class="gallery" id="gallery">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal-blur">
         <span class="eyebrow" data-i18n="galleryEyebrow">On the slopes</span>
         <h2 data-i18n="galleryH2">Gallery</h2>
         <p data-i18n="galleryLead">Swap these placeholders with real photos from training, races and club events.</p>
@@ -714,7 +784,7 @@
   <!-- TESTIMONIALS -->
   <section class="testimonials">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal reveal-blur">
         <span class="eyebrow" data-i18n="testiEyebrow">Families & athletes</span>
         <h2 data-i18n="testiH2">What People Say</h2>
         <p data-i18n="testiLead">Real feedback from the Snowline community.</p>
@@ -1239,20 +1309,73 @@
   }
 
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var revealEls = document.querySelectorAll('.reveal');
+
+  /* ----- Stagger: reveal siblings animate in sequence ----- */
+  var groups = {};
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  revealEls.forEach(function(el){
+    var parent = el.parentNode;
+    if(!parent) return;
+    var siblings = parent.querySelectorAll(':scope > .reveal');
+    if(siblings.length > 1){
+      var idx = Array.prototype.indexOf.call(siblings, el);
+      el.style.setProperty('--reveal-delay', Math.min(idx, 6) * 90 + 'ms');
+    }
+  });
+
+  /* ----- Count-up for stat numbers ----- */
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    if(isNaN(target)) return;
+    var suffix = el.getAttribute('data-suffix') || '';
+    if(prefersReduced){ el.textContent = target + suffix; return; }
+    var start = null, dur = 1400;
+    function step(ts){
+      if(start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ----- Reveal on scroll ----- */
   if(prefersReduced || !('IntersectionObserver' in window)){
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
+    document.querySelectorAll('[data-count]').forEach(countUp);
   } else {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
           entry.target.classList.add('in-view');
+          entry.target.querySelectorAll('[data-count]').forEach(countUp);
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(function(el){ io.observe(el); });
   }
+
+  /* ----- Scroll progress bar + sticky-nav shrink + hero parallax ----- */
+  var progress = document.getElementById('scrollProgress');
+  var header = document.querySelector('header.site-header');
+  var heroImg = document.querySelector('.hero-visual img');
+  var ticking = false;
+  function onScroll(){
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    if(progress){ progress.style.transform = 'scaleX(' + (docH > 0 ? y / docH : 0) + ')'; }
+    if(header){ header.classList.toggle('scrolled', y > 20); }
+    if(heroImg && !prefersReduced && y < window.innerHeight){
+      heroImg.style.setProperty('--parallax', (y * 0.12).toFixed(1) + 'px');
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+  onScroll();
 })();
 </script>
 
