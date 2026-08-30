@@ -350,6 +350,8 @@
   .tag-training{background:#E7F3FF;color:#0369A1;}
   .tag-race{background:#FFEFEA;color:var(--color-accent-dark);}
   .tag-event{background:#EEF2FF;color:#4338CA;}
+  .tag-junior{background:#EAF7EE;color:#15803D;}
+  .tag-travel{background:#FEF9E7;color:#92720B;}
   @media (max-width:640px){
     .schedule-row{grid-template-columns:70px 1fr;grid-template-areas:"date info" "date tags";}
     .date-badge{grid-area:date;}
