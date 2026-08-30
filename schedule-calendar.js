@@ -15,9 +15,11 @@
 
   // Pick these colors in the Google Calendar event editor to control the category badge.
   var CATEGORY_MAP = {
-    '10': { hu: 'TÁBOR', en: 'Camp', cls: 'tag-event' },      // Basil (green)
-    '9': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' }, // Blueberry
-    '8': { hu: 'PIHENŐ', en: 'Rest', cls: 'tag-race' }         // Graphite
+    '11': { hu: 'IFI VERSENY', en: 'Youth race', cls: 'tag-race' },        // Tomato (red)
+    '10': { hu: 'SERDÜLŐ VERSENY', en: 'Junior race', cls: 'tag-junior' }, // Basil (green)
+    '9': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' },             // Blueberry (blue)
+    '5': { hu: 'UTAZÁS', en: 'Travel', cls: 'tag-travel' },                // Banana (lemon yellow)
+    '8': { hu: 'PIHENŐ', en: 'Rest', cls: 'tag-event' }                    // Graphite (grey)
   };
   var DEFAULT_CATEGORY = { hu: 'ESEMÉNY', en: 'Event', cls: 'tag-event' };
 
