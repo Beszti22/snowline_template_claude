@@ -97,6 +97,10 @@
     if (!renderedEvents || !renderedEvents.length) {
       var empty = document.createElement('p');
       empty.className = 'schedule-empty';
+      empty.style.textAlign = 'center';
+      empty.style.color = 'var(--color-text-muted)';
+      empty.style.padding = '32px 0';
+      empty.style.fontSize = '14px';
       empty.textContent = TEXT[currentLang].empty;
       listEl.appendChild(empty);
       return;
