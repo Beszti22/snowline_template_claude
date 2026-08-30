@@ -46,17 +46,23 @@
     var end = parseDate(endPart);
     if (endPart.date) { end = new Date(end.getTime() - 24 * 60 * 60 * 1000); } // all-day end is exclusive
 
-    if (start.getFullYear() !== end.getFullYear() || start.getMonth() !== end.getMonth()) {
+    var sameDay = start.getFullYear() === end.getFullYear() && start.getMonth() === end.getMonth() && start.getDate() === end.getDate();
+    if (sameDay) {
       return {
-        hu: HU_MONTHS[start.getMonth()] + '–' + HU_MONTHS[end.getMonth()],
-        en: EN_MONTHS[start.getMonth()] + '–' + EN_MONTHS[end.getMonth()]
+        hu: HU_MONTHS[start.getMonth()] + ' ' + start.getDate() + '.',
+        en: EN_MONTHS[start.getMonth()] + ' ' + start.getDate()
       };
     }
-    var day = start.getDate();
-    var m = start.getMonth();
-    if (day <= 10) return { hu: HU_MONTHS[m] + ' eleje', en: 'Early ' + EN_MONTHS[m] };
-    if (day >= 21) return { hu: HU_MONTHS[m] + ' vége', en: 'Late ' + EN_MONTHS[m] };
-    return { hu: HU_MONTHS[m], en: EN_MONTHS[m] };
+    if (start.getFullYear() === end.getFullYear() && start.getMonth() === end.getMonth()) {
+      return {
+        hu: HU_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + end.getDate() + '.',
+        en: EN_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + end.getDate()
+      };
+    }
+    return {
+      hu: HU_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + HU_MONTHS[end.getMonth()] + ' ' + end.getDate() + '.',
+      en: EN_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + EN_MONTHS[end.getMonth()] + ' ' + end.getDate()
+    };
   }
 
   function buildRow(ev) {
