@@ -218,7 +218,7 @@
     .hero-text > *{opacity:1 !important;transform:none !important;animation:none !important;}
   }
   .hero-stats{
-    position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);
+    position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);
     border-top:1px solid rgba(255,255,255,0.14);
   }
   .hero-stats div{
