@@ -17,7 +17,7 @@
   var CATEGORY_MAP = {
     '11': { hu: 'IFI VERSENY', en: 'Youth race', cls: 'tag-race' },        // Tomato (red)
     '10': { hu: 'SERDÜLŐ VERSENY', en: 'Junior race', cls: 'tag-junior' }, // Basil (green)
-    '9': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' },             // Blueberry (blue)
+    '7': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' },               // Peacock (blue)
     '5': { hu: 'UTAZÁS', en: 'Travel', cls: 'tag-travel' },                // Banana (lemon yellow)
     '8': { hu: 'PIHENŐ', en: 'Rest', cls: 'tag-event' }                    // Graphite (grey)
   };
@@ -125,7 +125,7 @@
     link.href = PUBLIC_CALENDAR_URL;
     link.target = '_blank';
     link.rel = 'noopener';
-    link.className = 'btn btn-outline';
+    link.className = 'btn btn-dark-outline';
     link.style.marginTop = '16px';
     link.textContent = TEXT[currentLang].calLink;
     lead.appendChild(link);
