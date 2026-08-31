@@ -298,10 +298,32 @@
     if(btnEn) btnEn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
   }
 
+  var STORAGE_KEY = 'snowline-lang';
+
+  function getSavedLang(){
+    try{
+      return localStorage.getItem(STORAGE_KEY);
+    }catch(e){
+      return null;
+    }
+  }
+
+  function saveLang(lang){
+    try{
+      localStorage.setItem(STORAGE_KEY, lang);
+    }catch(e){
+      /* localStorage unavailable (private mode etc.) - language just won't persist */
+    }
+  }
+
   var btnHu = document.getElementById('btnHu');
   var btnEn = document.getElementById('btnEn');
-  if(btnHu) btnHu.addEventListener('click', function(){ applyLang('hu'); });
-  if(btnEn) btnEn.addEventListener('click', function(){ applyLang('en'); });
-  applyLang('hu');
+  if(btnHu) btnHu.addEventListener('click', function(){ applyLang('hu'); saveLang('hu'); });
+  if(btnEn) btnEn.addEventListener('click', function(){ applyLang('en'); saveLang('en'); });
+
+  // Only switch language when the visitor actually flips the HU/EN toggle.
+  // Until then, every page defaults to Hungarian; once a choice is saved,
+  // it carries over to every page the visitor navigates to next.
+  applyLang(getSavedLang() || 'hu');
   window.applyLang = applyLang;
 })();
