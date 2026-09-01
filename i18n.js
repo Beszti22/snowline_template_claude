@@ -9,7 +9,7 @@
       navAbout: `About`,
       navContact: `Contact`,
       navJoin: `Join the Team`,
-      "heroEyebrow: `Snowline Ski Club · Est. 2010`,"
+      
       heroH1: `Speed.<br>Focus.<br><span>Passion.</span>`,
       heroSub: `Alpine racing and youth development programs for skiers of every level, led by certified coaches who love the mountain as much as you do.`,
       heroCta1: `Register for Season`,
