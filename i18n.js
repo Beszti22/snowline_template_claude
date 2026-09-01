@@ -149,7 +149,7 @@
       navContact: `Kapcsolat`,
       navJoin: `Csatlakozz`,
       heroEyebrow: `Snowline Sí Klub · Alapítva 2010-ben`,
-      heroH1: `Speed.<br>Focus.<br><span>Passion.</span>`,
+      heroH1: `Sebesség.<br>Fókusz.<br><span>Szenvedély.</span>`,
       heroSub: `Alpesi verseny és utánpótlás-programok minden szintű síelőnek, minősített edzők vezetésével, akik ugyanúgy szeretik a hegyet, mint te.`,
       heroCta1: `Jelentkezés a szezonra`,
       heroCta2: `Programok megtekintése`,
