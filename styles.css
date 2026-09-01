@@ -195,12 +195,14 @@
   .hero-visual::after{
     content:"";position:absolute;inset:0;pointer-events:none;
     background:
-      linear-gradient(100deg, rgba(6,14,28,0.94) 0%, rgba(6,14,28,0.74) 26%, rgba(6,14,28,0.16) 52%, transparent 68%),
-      linear-gradient(0deg, rgba(6,14,28,0.5) 0%, transparent 34%);
+      radial-gradient(620px 420px at 0% 0%, rgba(6,14,28,0.96) 0%, rgba(6,14,28,0.78) 45%, rgba(6,14,28,0.25) 72%, transparent 88%),
+      linear-gradient(100deg, rgba(6,14,28,0.62) 0%, rgba(6,14,28,0.38) 26%, rgba(6,14,28,0.06) 48%, transparent 62%),
+      linear-gradient(0deg, rgba(6,14,28,0.32) 0%, transparent 28%);
   }
   .hero-inner{
     position:absolute;inset:0;z-index:2;display:flex;align-items:center;text-align:left;padding-top:76px;
   }
+  .hero-inner .container{margin-left:0;max-width:none;padding-left:clamp(24px,6vw,96px);padding-right:24px;}
   .hero-text{max-width:540px;}
   .hero-inner .eyebrow{color:var(--color-ice);}
   .hero h1{
