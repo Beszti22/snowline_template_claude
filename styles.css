@@ -130,6 +130,8 @@
   .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-display);font-size:26px;letter-spacing:0.06em;}
   .brand .icon{width:30px;height:30px;color:var(--color-ice);}
   .brand-icon{width:34px;height:34px;color:var(--color-accent);flex-shrink:0;}
+  .brand-logo{height:50px;width:auto;flex-shrink:0;display:block;}
+  .footer-logo{height:44px;width:auto;display:block;}
   .brand-text{display:flex;flex-direction:column;line-height:1.05;}
   .brand-name{font-family:var(--font-display);font-size:24px;letter-spacing:0.05em;text-transform:uppercase;color:var(--color-accent);}
   .brand-sub{font-family:var(--font-body);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-top:2px;}
@@ -195,14 +197,12 @@
   .hero-visual::after{
     content:"";position:absolute;inset:0;pointer-events:none;
     background:
-      radial-gradient(620px 420px at 0% 0%, rgba(6,14,28,0.96) 0%, rgba(6,14,28,0.78) 45%, rgba(6,14,28,0.25) 72%, transparent 88%),
-      linear-gradient(100deg, rgba(6,14,28,0.62) 0%, rgba(6,14,28,0.38) 26%, rgba(6,14,28,0.06) 48%, transparent 62%),
-      linear-gradient(0deg, rgba(6,14,28,0.32) 0%, transparent 28%);
+      linear-gradient(100deg, rgba(6,14,28,0.94) 0%, rgba(6,14,28,0.74) 26%, rgba(6,14,28,0.16) 52%, transparent 68%),
+      linear-gradient(0deg, rgba(6,14,28,0.5) 0%, transparent 34%);
   }
   .hero-inner{
     position:absolute;inset:0;z-index:2;display:flex;align-items:center;text-align:left;padding-top:76px;
   }
-  .hero-inner .container{margin-left:0;max-width:none;padding-left:clamp(24px,6vw,96px);padding-right:24px;}
   .hero-text{max-width:540px;}
   .hero-inner .eyebrow{color:var(--color-ice);}
   .hero h1{
