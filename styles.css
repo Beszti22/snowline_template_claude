@@ -129,6 +129,10 @@
   header.site-header.scrolled .brand{transform:scale(0.92);}
   .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--font-display);font-size:26px;letter-spacing:0.06em;}
   .brand .icon{width:30px;height:30px;color:var(--color-ice);}
+  .brand-icon{width:34px;height:34px;color:var(--color-accent);flex-shrink:0;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.05;}
+  .brand-name{font-family:var(--font-display);font-size:24px;letter-spacing:0.05em;text-transform:uppercase;color:var(--color-accent);}
+  .brand-sub{font-family:var(--font-body);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-top:2px;}
   .nav-links{display:flex;align-items:center;gap:36px;}
   .nav-links a{
     color:rgba(255,255,255,0.85);font-weight:600;font-size:15px;position:relative;padding:6px 2px;
