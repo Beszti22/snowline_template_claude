@@ -122,7 +122,7 @@
       formOpt1: `Race team (youth)`,
       formOpt2: `Ski lessons — children`,
       formOpt3: `Ski lessons — adults`,
-      formOpt4: `Ski tour / camp`,
+      
       formMessage: `Message`,
       formMessagePh: `Tell us about the athlete's experience level...`,
       formSubmit: `Send message`,
