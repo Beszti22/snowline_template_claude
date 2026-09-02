@@ -63,10 +63,6 @@
         <span class="eyebrow" data-i18n="contactEyebrow">Get in touch</span>
         <h2 style="font-size:clamp(28px,4vw,40px);color:var(--color-primary);margin:12px 0 20px;" data-i18n="contactH2">Questions? Let's talk.</h2>
         <div class="info-row">
-          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <div><strong data-i18n="contactInfo1Label">Address</strong><span>Bene vezér tér 1., Mátrafüred, 3232</span></div>
-        </div>
-        <div class="info-row">
           <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.4 2.1L8 10a16 16 0 006 6l1.2-1.3a2 2 0 012.1-.4c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg></span>
           <div><strong data-i18n="contactInfo2Label">Phone</strong><span><a href="tel:+36302619041">+36 30 261 9041</a></span></div>
         </div>
@@ -82,8 +78,17 @@
           <a href="https://www.instagram.com/snowline_ski_team/" target="_blank" rel="noopener" aria-label="Snowline on Instagram"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.facebook.com/snowlineklub" target="_blank" rel="noopener" aria-label="Snowline on Facebook"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
         </div>
-        <div class="map-placeholder">
-          <iframe class="map-embed" title="Snowline – Mátrafüred" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Bene%20vez%C3%A9r%20t%C3%A9r%201%2C%20M%C3%A1traf%C3%BCred&output=embed"></iframe>
+        <div class="coverage-highlight">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+          <div>
+            <strong data-i18n="contactCoverageTitle">Nationwide coverage</strong>
+            <p data-i18n="contactCoverageDesc">We usually depart from Budapest to our training camps and races in Austria — wherever you're from, you're welcome to join us.</p>
+          </div>
+        </div>
+        <div class="tax-template">
+          <strong data-i18n="contactTaxTitle">Support us with 1% of your tax (Hungary)</strong>
+          <div class="tax-line"><b data-i18n="contactTaxOrgLabel">Association name:</b> <span data-i18n="contactTaxOrgPh">[Enter association name here]</span></div>
+          <div class="tax-line"><b data-i18n="contactTaxIdLabel">Tax ID:</b> <span data-i18n="contactTaxIdPh">[Enter tax ID here]</span></div>
         </div>
       </div>
 
@@ -111,10 +116,9 @@
         <div class="field">
           <label for="program" data-i18n="formProgram">Program of Interest</label>
           <select id="program" name="program">
-            <option data-i18n="formOpt1">Youth Development (5–9)</option>
-            <option data-i18n="formOpt2">Alpine Racing Team (10–18)</option>
-            <option data-i18n="formOpt3">Freestyle & Freeride (10–18)</option>
-            <option data-i18n="formOpt4">Adult Recreational</option>
+            <option data-i18n="formOpt1">Race team (youth)</option>
+            <option data-i18n="formOpt2">Ski lessons — children</option>
+            <option data-i18n="formOpt3">Ski lessons — adults</option>
           </select>
         </div>
         <div class="field">
