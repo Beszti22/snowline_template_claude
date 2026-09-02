@@ -30,7 +30,7 @@
       foundedLabel: `Founded`,
       aboutEyebrow: `About the club`,
       aboutH2: `About Snowline`,
-      aboutP1: `Snowline is the alpine race club of Mátrafüred — for more than two decades, since 2004, we have been raising the alpine ski racers of the future. The club was founded by ski enthusiasts from Budapest and the Mátra, with one goal: to give young athletes a shot at competitive sport in a professional yet family-run setting.`,
+      aboutP1: `Snowline Alpine Ski Club has been raising the alpine ski racers of the future for more than two decades, since 2004. The club was founded by ski enthusiasts from Budapest, with one goal: to give young athletes a shot at competitive sport in a professional yet family-run setting.`,
       aboutP2: `Racing is our core focus: within a year-round preparation programme our athletes compete in the Hungarian Cup series, at Austrian races and international events. In the 2018/2019 season (16th Hungarian Cup) the Snowline team won the Hungarian Cup team competition — making us one of the defining workshops of Hungarian alpine racing talent.`,
       aboutP3: `Alongside racing we run ski lessons for children and adults all year, and organise ski tours and talent-scouting camps — because future champions can only be built on a broad base.`,
       aboutP4: `Our base in Austria sits in the Murau region, close to the Grebenzen / St. Lambrecht ski area (about 450 km from Budapest). It hosts our training camps and season prep; from here our athletes also travel to Austrian and international races. We move the team in our own 7–9 seat minibuses.`,
@@ -135,7 +135,7 @@
       formSubmit: `Send message`,
       formNote: `We'll get back to you soon. You can also reach us directly at snowline.hu or on Facebook: Snowline Ski Team.`,
       formSuccess: `Thanks — we've received your message and will be in touch.`,
-      footerBrandDesc: `Snowline is the alpine race club of Mátrafüred — raising alpine ski racers since 2004: Hungarian Cup, Austrian and international races, year-round preparation.`,
+      footerBrandDesc: `Snowline Alpine Ski Club — raising alpine ski racers since 2004: Hungarian Cup, Austrian and international races, year-round preparation.`,
       footerQuickLinks: `Quick Links`,
       footerPrograms: `Programme`,
       footerAlpineRacing: `Hungarian Cup`,
@@ -143,7 +143,7 @@
       footerNewsletterDesc: `Season news, race results and schedule changes — straight to your inbox.`,
       footerNewsletterLabel: `Email address`,
       footerNewsletterPh: `Your email`,
-      footerCopyright: `© 2026 Snowline Ski Club, Mátrafüred. All rights reserved.`,
+      footerCopyright: `© 2026 Snowline Alpine Ski Club. All rights reserved.`,
       footerTemplateNote: `snowline.hu · Facebook: Snowline Ski Team`
     },
     hu: {
@@ -176,7 +176,7 @@
       foundedLabel: `Alapítva`,
       aboutEyebrow: `A klubról`,
       aboutH2: `Bemutatkozás`,
-      aboutP1: `A Snowline a Mátrafüredi síversenyző klub — 2004 óta, több mint két évtizede neveljük a jövő alpesisí-bajnokait. A klubot budapesti és mátrai síszerelmesek alapították, azzal a céllal, hogy professzionális, mégis családias keretek között adjanak esélyt a fiataloknak a versenysportra.`,
+      aboutP1: `A Snowline Alpesi Síklub — 2004 óta, több mint két évtizede neveljük a jövő alpesisí-bajnokait. A klubot budapesti síszerelmesek alapították, azzal a céllal, hogy professzionális, mégis családias keretek között adjanak esélyt a fiataloknak a versenysportra.`,
       aboutP2: `Fő profilunk a versenyeztetés: versenyzőink egész éves felkészülési program keretében indulnak a Magyar Kupa sorozatban, ausztriai versenyeken és nemzetközi megmérettetéseken. A 2018/2019-es szezonban (XVI. Magyar Kupa) a Snowline csapata megnyerte a Magyar Kupa csapatversenyét — ezzel a hazai alpesisí-utánpótlás egyik meghatározó műhelyévé váltunk.`,
       aboutP3: `A versenyeztetés mellett egész évben tartunk síoktatást gyerekeknek és felnőtteknek egyaránt, valamint sítúrákat és tehetségkutató táborokat szervezünk — mert hiszünk benne, hogy a jövő bajnokait csak széles alapokról lehet felépíteni.`,
       aboutP4: `Ausztriai bázisunk Murau térségében, a Grebenzen / St. Lambrecht sípálya közelében található (kb. 450 km-re Budapesttől). Itt zajlanak az edzőtáborok és a versenyszezonra való felkészülés; innen indulnak versenyzőink az ausztriai és nemzetközi megmérettetésekre is. A csapatot saját, 7–9 fős kisbuszainkkal szállítjuk.`,
@@ -281,7 +281,7 @@
       formSubmit: `Üzenet küldése`,
       formNote: `Hamarosan válaszolunk. Közvetlenül is elérsz minket: snowline.hu vagy Facebook: Snowline Ski Team.`,
       formSuccess: `Köszönjük — megkaptuk az üzeneted, hamarosan jelentkezünk.`,
-      footerBrandDesc: `A Snowline a Mátrafüredi síversenyző klub — 2004 óta neveljük a jövő alpesisí-versenyzőit: Magyar Kupa, ausztriai és nemzetközi versenyek, egész éves felkészülés.`,
+      footerBrandDesc: `A Snowline Alpesi Síklub — 2004 óta neveljük a jövő alpesisí-versenyzőit: Magyar Kupa, ausztriai és nemzetközi versenyek, egész éves felkészülés.`,
       footerQuickLinks: `Gyors linkek`,
       footerPrograms: `Programjaink`,
       footerAlpineRacing: `Magyar Kupa`,
@@ -289,7 +289,7 @@
       footerNewsletterDesc: `Szezonhírek, versenyeredmények és programváltozások — egyenesen a postafiókodba.`,
       footerNewsletterLabel: `E-mail cím`,
       footerNewsletterPh: `E-mail címed`,
-      footerCopyright: `© 2026 Snowline Sí Klub, Mátrafüred. Minden jog fenntartva.`,
+      footerCopyright: `© 2026 Snowline Alpesi Síklub. Minden jog fenntartva.`,
       footerTemplateNote: `snowline.hu · Facebook: Snowline Ski Team`
     }
   };
