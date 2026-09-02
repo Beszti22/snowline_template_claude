@@ -436,6 +436,25 @@
   .map-placeholder{margin-top:8px;}
   .map-placeholder .placeholder-block{aspect-ratio:16/10;}
 
+  .coverage-highlight{
+    margin-top:8px;display:flex;gap:14px;align-items:flex-start;
+    background:var(--color-surface);border-radius:var(--radius-md);padding:20px;
+  }
+  .coverage-highlight .icon-badge{
+    width:44px;height:44px;border-radius:var(--radius-sm);background:#fff;box-shadow:var(--shadow-sm);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--color-accent);
+  }
+  .coverage-highlight strong{display:block;color:var(--color-primary);margin-bottom:4px;font-size:15px;}
+  .coverage-highlight p{font-size:14px;line-height:1.6;color:var(--color-text-muted);margin:0;}
+
+  .tax-template{
+    margin-top:20px;padding:20px;border:1.5px dashed var(--color-accent);border-radius:var(--radius-md);
+    background:rgba(236,111,45,0.06);
+  }
+  .tax-template strong{display:block;color:var(--color-primary);margin-bottom:10px;font-size:15px;}
+  .tax-template .tax-line{font-size:14px;color:var(--color-text-muted);margin-top:6px;}
+  .tax-template .tax-line b{color:var(--color-primary);}
+
   form.contact-form{display:flex;flex-direction:column;gap:16px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .field{display:flex;flex-direction:column;gap:6px;}
