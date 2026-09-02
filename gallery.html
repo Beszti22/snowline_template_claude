@@ -64,24 +64,34 @@
         <h2 data-i18n="galleryH2">Gallery</h2>
         <p data-i18n="galleryLead">Swap these placeholders with real photos from training, races and club events.</p>
       </div>
-      <div class="gallery-grid">
-        <img class="g-tall reveal" src="/assets/gallery-1.jpg" alt="Snowline Ski Team, December 2022">
-        <img class="g-wide reveal" src="/assets/gallery-2.jpg" alt="Race training on the Grebenzen slope">
-        <img class="reveal" src="/assets/gallery-3.jpg" alt="Team training at the indoor ski hall">
-        <img class="reveal" src="/assets/gallery-4.jpg" alt="Hungarian Cup awards ceremony">
-        <img class="reveal" src="/assets/gallery-5.jpg" alt="Ski training in Austria">
-        <img class="reveal" src="/assets/gallery-6.jpg" alt="Summer camp in Möltaler Glacier">
-        <img class="reveal" src="/assets/gallery-7.jpg" alt="Training at Grebenzen">
-        <img class="reveal" src="/assets/gallery-8.jpg" alt="Summer camp in Hintertux">
-        <img class="reveal" src="/assets/gallery-9.jpg" alt="Training at Grebenzen">
-        <img class="reveal" src="/assets/gallery-10.jpg" alt="GS training ">
-        <img class="reveal" src="/assets/gallery-11.jpg" alt="Winter parallel club race">
-        <img class="reveal" src="/assets/gallery-12.jpg" alt="Training in Turracher Höhe">
-        <img class="reveal" src="/assets/gallery-13.jpg" alt="Summer camp in Hintertux">
-        <img class="reveal" src="/assets/gallery-14.jpg" alt="GS training in Murau">
+      <div class="gallery-grid" id="galleryGrid">
+        <img class="g-tall reveal" src="/assets/gallery-1.jpg" alt="Snowline Ski Team, December 2022" data-caption="Snowline Ski Team, December 2022" tabindex="0">
+        <img class="g-wide reveal" src="/assets/gallery-2.jpg" alt="Race training on the Grebenzen slope" data-caption="Grebenzen, St. Lambrecht" tabindex="0">
+        <img class="reveal" src="/assets/gallery-3.jpg" alt="Team training at the indoor ski hall" data-caption="Indoor ski hall" tabindex="0">
+        <img class="reveal" src="/assets/gallery-4.jpg" alt="Hungarian Cup awards ceremony" data-caption="Hungarian Cup awards ceremony" tabindex="0">
+        <img class="reveal" src="/assets/gallery-5.jpg" alt="Ski training in Austria" data-caption="Austria" tabindex="0">
+        <img class="reveal" src="/assets/gallery-6.jpg" alt="Summer camp in Möltaler Glacier" data-caption="Mölltaler Glacier, Austria" tabindex="0">
+        <img class="reveal" src="/assets/gallery-7.jpg" alt="Training at Grebenzen" data-caption="Grebenzen, St. Lambrecht" tabindex="0">
+        <img class="reveal" src="/assets/gallery-8.jpg" alt="Summer camp in Hintertux" data-caption="Hintertux Glacier, Austria" tabindex="0">
+        <img class="reveal" src="/assets/gallery-9.jpg" alt="Training at Grebenzen" data-caption="Grebenzen, St. Lambrecht" tabindex="0">
+        <img class="reveal" src="/assets/gallery-10.jpg" alt="GS training" data-caption="Giant slalom training" tabindex="0">
+        <img class="reveal" src="/assets/gallery-11.jpg" alt="Winter parallel club race" data-caption="Club parallel race, winter" tabindex="0">
+        <img class="reveal" src="/assets/gallery-12.jpg" alt="Training in Turracher Höhe" data-caption="Turracher Höhe, Austria" tabindex="0">
+        <img class="reveal" src="/assets/gallery-13.jpg" alt="Summer camp in Hintertux" data-caption="Hintertux Glacier, Austria" tabindex="0">
+        <img class="reveal" src="/assets/gallery-14.jpg" alt="GS training in Murau" data-caption="Murau, Austria" tabindex="0">
       </div>
     </div>
   </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
 
 </main>
 
