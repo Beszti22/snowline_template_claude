@@ -261,7 +261,7 @@
       formOpt1: `Versenycsapat (utánpótlás)`,
       formOpt2: `Síoktatás — gyerek`,
       formOpt3: `Síoktatás — felnőtt`,
-      formOpt4: `Sítúra / tábor`,
+      
       formMessage: `Üzenet`,
       formMessagePh: `Írd le, milyen szinten síel a sportoló...`,
       formSubmit: `Üzenet küldése`,
