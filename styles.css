@@ -315,12 +315,15 @@
 
   /* ---------- COACHES ---------- */
   .coach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  .coach-card{text-align:center;}
+  .coach-card{text-align:center;transition:transform 300ms var(--ease-out);}
+  .coach-card:hover{transform:translateY(-6px);}
   .coach-avatar{
     width:100%;aspect-ratio:1;border-radius:50%;background:var(--color-primary);
     display:flex;align-items:center;justify-content:center;color:var(--color-ice);
     margin-bottom:18px;position:relative;overflow:hidden;
+    box-shadow:0 0 0 0 rgba(10,26,48,0);transition:box-shadow 300ms var(--ease-out);
   }
+  .coach-card:hover .coach-avatar{box-shadow:var(--shadow-lg);}
   .coach-avatar .icon{width:44%;height:44%;color:rgba(255,255,255,0.85);}
   .coach-card h3{font-family:var(--font-body);font-weight:800;letter-spacing:0;text-transform:none;font-size:17px;color:var(--color-primary);}
   .coach-role{display:block;color:var(--color-accent);font-weight:700;font-size:13px;margin:4px 0 10px;}
