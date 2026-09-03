@@ -573,3 +573,104 @@
   /* ---------- ACTIVE NAV LINK (current page) ---------- */
   .nav-links a[aria-current="page"]{color:#fff;}
   .nav-links a[aria-current="page"]::after{width:100%;}
+
+  /* =========================================================
+   Snowline - Partnerek & Támogatók (Alpine / Sleek dizájn)
+   ========================================================= */
+
+.snowline-partners-bar {
+  position: relative;
+  padding: 45px 0 40px;
+  background: linear-gradient(180deg, rgba(13, 27, 42, 0.95) 0%, rgba(10, 20, 32, 0.98) 100%);
+  border-top: 1px solid rgba(176, 212, 238, 0.15); /* Finom jégkék szegély */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Finom havas/jeges fénycsík a szekció tetején */
+.snowline-partners-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(144, 202, 249, 0.6), transparent);
+}
+
+.partners-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #90caf9; /* Prémium jégkék */
+  background: rgba(144, 202, 249, 0.08);
+  border: 1px solid rgba(144, 202, 249, 0.2);
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+}
+
+.partners-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px 55px;
+}
+
+.partner-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.partner-card img {
+  height: 38px;
+  width: auto;
+  max-width: 145px;
+  object-fit: contain;
+  /* Alapállapotban szürkeárnyalatos, visszafogott jég-fehér fényű */
+  opacity: 0.6;
+  filter: grayscale(100%) brightness(1.2) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  transition: all 0.35s ease;
+}
+
+/* Hover: a kártya jégkék fényt kap, a logó kiszínesedik és kiemelkedik */
+.partner-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(144, 202, 249, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(0, 150, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.partner-card:hover img {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.04);
+}
+
+/* Reszponzív nézet mobilra */
+@media (max-width: 768px) {
+  .snowline-partners-bar {
+    padding: 35px 0 30px;
+  }
+  .partners-track {
+    gap: 16px 24px;
+  }
+  .partner-card {
+    padding: 8px 12px;
+  }
+  .partner-card img {
+    height: 30px;
+    max-width: 115px;
+  }
+}
