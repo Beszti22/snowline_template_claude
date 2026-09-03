@@ -675,20 +675,41 @@
    ========================================================= */
 
 /* A kártyás szekció sötét háttere */
+/* =========================================================
+   Alpesi kék átmenet & hézagmentesítés (Testimonials -> Partnerek -> Footer)
+   ========================================================= */
+
+/* 1. Értékelések szekció (Testimonials): a weboldal tiszta sötétkékje */
 section.testimonials {
-  background-color: #0b1523 !important;
+  background-color: var(--color-primary) !important; /* #0A1A30 */
   margin-bottom: 0 !important;
-  padding-bottom: 40px !important;
+  padding-bottom: 48px !important;
 }
 
-/* A partnerek sávja és a lábléc illesztése */
+/* 2. Partnerek sávja: egy finom árnyalattal mélyebb, tengerészkék alapon */
 .snowline-partners-bar {
-  background-color: #08101a !important;
+  background: linear-gradient(180deg, #0A1A30 0%, #081629 100%) !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.2) !important; /* Jégkék szegély (var(--color-ice)) */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
+/* 3. Lábléc (Footer): szép tengerészkék, semmi fekete, nulla felső margóval */
 footer {
-  margin-top: 0 !important;
-  background-color: #060c14 !important;
+  background-color: #081629 !important;
+  margin-top: 0 !important; /* Megszünteti a korábbi 88px-es fehér hézagot! */
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-top: none !important;
+}
+
+/* A footer belső elválasztó vonala a copyright előtt */
+.footer-grid {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* A hírlevél mezője a kék lábléchez igazítva */
+.newsletter input {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
