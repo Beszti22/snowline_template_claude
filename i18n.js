@@ -103,7 +103,7 @@
       testiParentRole: ``,
       testiMemberName: ``,
       ctaH2: `Would you like to train and compete with us?`,
-      ctaLead: `Ask about the race team or ski instruction.`,
+      ctaLead: `Ask about the race team or ski instruction.National team coaching expertise. ear-round preparation (130-150 days on snow): fitness, winter and summer camps, glacier and indoor ski hall.- Contact us at snowline.hu or on Facebook: Snowline Ski Team.`,
       ctaBtn1: `Contact us`,
       ctaBtn2: `Call the club`,
       contactEyebrow: `Get in touch`,
@@ -249,7 +249,8 @@
       testiParentRole: ``,
       testiMemberName: ``,
       ctaH2: `Edzenél, versenyeznél nálunk?`,
-      ctaLead: `Kérdezz a versenycsapatról, vagy a síoktatásról. — elérsz a snowline.hu oldalon vagy a Facebookon: Snowline Ski Team.`,
+      ctaLead: `Kérdezz a versenycsapatról, vagy a síoktatásról. Válogatott edzői háttérrel. Egész éves felkészülés (130-150 havas nap) erőnlét, téli és nyári táborok, gleccser és csarnok.
+ — elérsz a snowline.hu oldalon vagy a Facebookon: Snowline Ski Team.`,
       ctaBtn1: `Kapcsolat`,
       ctaBtn2: `Hívd a klubot`,
       contactEyebrow: `Lépj kapcsolatba`,
