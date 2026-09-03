@@ -63,11 +63,11 @@
       coach2role: `Coach · technique & youth development`,
       coach2bio: `The team's other key coach, responsible for the technical development of the racers and for bringing through the younger age groups.`,
       coach3name: `Dorultán Péter`,
-      coach3role: `Coach · former Hungarian national team racer`,
-      coach3bio: `Péter has years of racing experience and a background in French ski-school training. A former Hungarian national team member, he raced in French championships and international FIS events, and now enjoys coaching the club's younger athletes.`,
+      coach3role: `Coach · coaching the club's younger athletes`,
+      coach3bio: `Péter has years of racing experience and holds a French ski instructor certificate. A former Hungarian national team member, he raced in French championships and international FIS events.`,
       coach4name: `Beszterczey Kristóf`,
-      coach4role: `Coach · Austrian ski instructor certificate`,
-      coach4bio: `Kristóf has years of racing experience, including a junior world championship appearance. He holds an Austrian ski instructor certificate, has raced on the FIS circuit, and actively helps prepare other FIS racers.`,
+      coach4role: `Coach · supporting FIS racers' preparation`,
+      coach4bio: `Kristóf has years of racing experience, including a junior world championship appearance, and holds an Austrian ski instructor certificate.`,
       scheduleEyebrow: `The season`,
       scheduleH2: `Our year`,
       scheduleLead: `An indicative outline of the club's annual cycle — exact dates go out to registered families.`,
@@ -209,11 +209,11 @@
       coach2role: `Edző · technikai fejlesztés és utánpótlás`,
       coach2bio: `A csapat másik meghatározó edzője, aki a versenyzők technikai fejlesztéséért és a fiatalabb korosztályok utánpótlás-neveléséért felel.`,
       coach3name: `Dorultán Péter`,
-      coach3role: `Edző · volt magyar válogatott versenyző`,
-      coach3bio: `Több éves versenyzői és francia síoktatói tapasztalattal rendelkezik. Korábban a magyar válogatott tagja volt, francia bajnokságokon és nemzetközi FIS-versenyeken indult, és szívesen foglalkozik a fiatalabb korosztállyal is.`,
+      coach3role: `Edző · a fiatalabb versenyzők felkészítése`,
+      coach3bio: `Több éves versenyzői és francia síoktatói oklevéllel rendelkezik. Korábban a magyar válogatott tagja volt, francia bajnokságokon és nemzetközi FIS-versenyeken indult.`,
       coach4name: `Beszterczey Kristóf`,
-      coach4role: `Edző · osztrák síoktatói oklevél`,
-      coach4bio: `Több éves versenyzői múlttal rendelkezik, szerepelt a junior világbajnokságon, és számos FIS-versenyen versenyzett. Osztrák síoktatói oklevele mellett aktívan segíti a FIS-versenyzők felkészülését is.`,
+      coach4role: `Edző · FIS-versenyzők felkészítése`,
+      coach4bio: `Több éves versenyzői múlttal rendelkezik, szerepelt a junior világbajnokságon, és számos FIS-versenyen versenyzett. Osztrák síoktatói oklevéllel rendelkezik.`,
       scheduleEyebrow: `A szezon`,
       scheduleH2: `Az évünk`,
       scheduleLead: `A klub éves ciklusának irányadó vázlata — a pontos időpontokat a regisztrált családokkal osztjuk meg.`,
@@ -337,7 +337,7 @@
 
   // Only switch language when the visitor actually flips the HU/EN toggle.
   // Until then, every page defaults to Hungarian; once a choice is saved,
-  // it carries over to every page the visitor navigates to next.
+  // it carries over to every page the visitor navigates to.
   applyLang(getSavedLang() || 'hu');
   window.applyLang = applyLang;
 })();
