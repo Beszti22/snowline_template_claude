@@ -669,3 +669,26 @@
     max-width: 140px;
   }
 }
+
+/* =========================================================
+   About oldal - Fehér hézag megszüntetése a kártyák és a footer között
+   ========================================================= */
+
+/* A kártyás szekció sötét háttere */
+section.testimonials {
+  background-color: #0b1523 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 40px !important;
+}
+
+/* A partnerek sávja és a lábléc illesztése */
+.snowline-partners-bar {
+  background-color: #08101a !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+footer {
+  margin-top: 0 !important;
+  background-color: #060c14 !important;
+}
