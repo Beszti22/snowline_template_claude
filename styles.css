@@ -407,7 +407,7 @@
   .lightbox-close:hover{background:rgba(255,255,255,0.18);}
 
   /* ---------- TESTIMONIALS ---------- */
-  .testimonials{background:var(--color-primary);color:#fff;}
+  .testimonials{background:var(--color-primary);color:#fff;margin-bottom:0;padding-bottom:48px;}
   .testimonials .section-head h2{color:#fff;}
   .testimonials .section-head p{color:rgba(255,255,255,0.7);}
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -544,7 +544,7 @@
   @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} .form-row{grid-template-columns:1fr;} }
 
   /* ---------- FOOTER ---------- */
-  footer{background:var(--color-primary);color:rgba(255,255,255,0.75);padding:72px 0 0;margin-top:88px;}
+  footer{background:#081629;color:rgba(255,255,255,0.85);padding:72px 0 0;margin-top:0;border-top:none;}
   .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.1);}
   .footer-brand .brand{margin-bottom:14px;}
   .footer-brand p{font-size:14px;line-height:1.7;max-width:280px;}
@@ -554,7 +554,7 @@
   .footer-col a:hover{color:#fff;}
   .newsletter{display:flex;gap:8px;margin-top:6px;}
   .newsletter input{
-    flex:1;min-width:0;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);
+    flex:1;min-width:0;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);
     padding:12px 14px;color:#fff;font-size:14px;
   }
   .newsletter input::placeholder{color:rgba(255,255,255,0.5);}
@@ -625,10 +625,11 @@
 
 .snowline-partners-bar {
   position: relative;
+  margin: 0;
   padding: 45px 0 40px;
-  background: linear-gradient(180deg, rgba(13, 27, 42, 0.95) 0%, rgba(10, 20, 32, 0.98) 100%);
-  border-top: 1px solid rgba(176, 212, 238, 0.15); /* Finom jégkék szegély */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, #0A1A30 0%, #081629 100%);
+  border-top: 1px solid rgba(56, 189, 248, 0.2); /* Jégkék szegély (var(--color-ice)) */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
   overflow: hidden;
 }
@@ -713,48 +714,4 @@
     height: 42px;     /* Mobilon is jól látható marad */
     max-width: 140px;
   }
-}
-
-/* =========================================================
-   About oldal - Fehér hézag megszüntetése a kártyák és a footer között
-   ========================================================= */
-
-/* A kártyás szekció sötét háttere */
-/* =========================================================
-   Alpesi kék átmenet & hézagmentesítés (Testimonials -> Partnerek -> Footer)
-   ========================================================= */
-
-/* 1. Értékelések szekció (Testimonials): a weboldal tiszta sötétkékje */
-section.testimonials {
-  background-color: var(--color-primary) !important; /* #0A1A30 */
-  margin-bottom: 0 !important;
-  padding-bottom: 48px !important;
-}
-
-/* 2. Partnerek sávja: egy finom árnyalattal mélyebb, tengerészkék alapon */
-.snowline-partners-bar {
-  background: linear-gradient(180deg, #0A1A30 0%, #081629 100%) !important;
-  border-top: 1px solid rgba(56, 189, 248, 0.2) !important; /* Jégkék szegély (var(--color-ice)) */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-/* 3. Lábléc (Footer): szép tengerészkék, semmi fekete, nulla felső margóval */
-footer {
-  background-color: #081629 !important;
-  margin-top: 0 !important; /* Megszünteti a korábbi 88px-es fehér hézagot! */
-  color: rgba(255, 255, 255, 0.85) !important;
-  border-top: none !important;
-}
-
-/* A footer belső elválasztó vonala a copyright előtt */
-.footer-grid {
-  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* A hírlevél mezője a kék lábléchez igazítva */
-.newsletter input {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
 }
