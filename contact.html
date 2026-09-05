@@ -107,8 +107,22 @@
             <input type="text" id="parentName" name="parentName" required autocomplete="name">
           </div>
           <div class="field">
+            <label for="athleteName" data-i18n="formAthleteName">Athlete's Name</label>
+            <input type="text" id="athleteName" name="athleteName" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
             <label for="athleteAge" data-i18n="formAthleteAge">Athlete Age</label>
             <input type="number" id="athleteAge" name="athleteAge" min="3" max="99" required>
+          </div>
+          <div class="field">
+            <label for="experienceLevel" data-i18n="formExperienceLevel">Experience Level</label>
+            <select id="experienceLevel" name="experienceLevel">
+              <option data-i18n="formExpBeginner">Beginner</option>
+              <option data-i18n="formExpIntermediate">Intermediate</option>
+              <option data-i18n="formExpRacing">Competitive / Racing</option>
+            </select>
           </div>
         </div>
         <div class="form-row">
@@ -133,11 +147,30 @@
           <label for="message" data-i18n="formMessage">Message</label>
           <textarea id="message" name="message" placeholder="Tell us about your athlete's experience level..." data-i18n-placeholder="formMessagePh"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="align-self:flex-start;" data-i18n="formSubmit">Submit Inquiry</button>
-        <p class="form-note" data-i18n="formNote">We'll respond within 2 business days. This form is a template placeholder — connect it to your email or registration provider.</p>
+
+        <p class="form-note" style="margin:0;" data-i18n="privacyNoteText">We only use this information to respond to your inquiry about our ski programmes and never share it with third parties.</p>
+
+        <label class="consent-row" for="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span data-i18n="formConsent">I agree that Snowline Alpine Ski Club may use the information above to respond to this inquiry.</span>
+        </label>
+
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label for="botcheck">Leave this field empty</label>
+          <input type="text" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="contactSubmitBtn" style="align-self:flex-start;" data-i18n="formSubmit">Submit Inquiry</button>
+        <p class="form-note" data-i18n="formNote">We'll get back to you soon. You can also reach us directly at snowline.hu or on Facebook: Snowline Ski Team.</p>
+
+        <span id="i18nSendingText" data-i18n="formSending" hidden>Sending...</span>
+
         <div class="form-success" id="formSuccess" role="status">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span data-i18n="formSuccess">Thanks! This is a template — wire this form up to receive real submissions.</span>
+          <span data-i18n="formSuccess">Thanks — we've received your message and will be in touch.</span>
+        </div>
+        <div class="form-error" id="formError" role="alert">
+          <span data-i18n="formError">Something went wrong sending your message. Please try again, or email us directly.</span>
         </div>
       </form>
     </div>
@@ -198,14 +231,58 @@
 <script src="/main.js"></script>
 <script>
 (function(){
-var form = document.getElementById('contactForm');
+  var form = document.getElementById('contactForm');
   var success = document.getElementById('formSuccess');
+  var errorBox = document.getElementById('formError');
+  var submitBtn = document.getElementById('contactSubmitBtn');
+  var sendingLabel = document.getElementById('i18nSendingText');
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
       if(!form.checkValidity()){ form.reportValidity(); return; }
-      success.classList.add('visible');
-      form.reset();
+
+      success.classList.remove('visible');
+      errorBox.classList.remove('visible');
+
+      var originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      if(sendingLabel){ submitBtn.textContent = sendingLabel.textContent; }
+
+      var payload = {
+        parentName: form.parentName.value,
+        athleteName: form.athleteName.value,
+        athleteAge: form.athleteAge.value,
+        experienceLevel: form.experienceLevel.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        program: form.program.value,
+        message: form.message.value,
+        consent: form.consent.checked,
+        botcheck: form.botcheck.value
+      };
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(json){
+          return { ok: res.ok && json.ok, json: json };
+        });
+      }).then(function(result){
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        if(result.ok){
+          success.classList.add('visible');
+          form.reset();
+        } else {
+          errorBox.classList.add('visible');
+        }
+      }).catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        errorBox.classList.add('visible');
+      });
     });
   }
 })();
