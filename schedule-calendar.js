@@ -58,7 +58,7 @@
   // Lowercase + strip Hungarian accents, so "Edzés", "EDZÉS", "edzes" all match the same key.
   function normalizeTag(s) {
     return s
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
       .toLowerCase()
       .replace(/\s+/g, ' ')
       .trim();
@@ -71,9 +71,26 @@
     return m ? normalizeTag(m[1]) : null;
   }
 
+  // Best-effort guess from plain text (event title, or description if the title didn't match) —
+  // so a normally-named event ("Edzés", "Magyar kupa serdülő verseny") gets tagged automatically,
+  // with no extra typing needed. The explicit "kategória: ..." tag always wins over this guess.
+  function detectCategoryFromText(text) {
+    if (!text) return null;
+    var t = normalizeTag(text);
+    var isRace = /verseny|kupa/.test(t);
+    if (isRace && /\bifi\b|ifjusagi/.test(t)) return CATEGORY_BY_TAG['ifi verseny'];
+    if (isRace && /serdulo/.test(t)) return CATEGORY_BY_TAG['serdulo verseny'];
+    if (/edzes/.test(t)) return CATEGORY_BY_TAG['edzes'];
+    if (/utaz/.test(t)) return CATEGORY_BY_TAG['utazas'];
+    if (/piheno|szunet/.test(t)) return CATEGORY_BY_TAG['piheno'];
+    return null;
+  }
+
   function resolveCategory(ev) {
     var tag = extractCategoryTag(ev.description);
     if (tag && CATEGORY_BY_TAG[tag]) return CATEGORY_BY_TAG[tag];
+    var guessed = detectCategoryFromText(ev.summary) || detectCategoryFromText(ev.description);
+    if (guessed) return guessed;
     if (ev.colorId && CATEGORY_BY_COLOR[ev.colorId]) return CATEGORY_BY_COLOR[ev.colorId];
     return DEFAULT_CATEGORY;
   }
@@ -92,13 +109,13 @@
     }
     if (start.getFullYear() === end.getFullYear() && start.getMonth() === end.getMonth()) {
       return {
-        hu: HU_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + end.getDate() + '.',
-        en: EN_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + end.getDate()
+        hu: HU_MONTHS[start.getMonth()] + ' ' + start.getDate() + '–' + end.getDate() + '.',
+        en: EN_MONTHS[start.getMonth()] + ' ' + start.getDate() + '–' + end.getDate()
       };
     }
     return {
-      hu: HU_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + HU_MONTHS[end.getMonth()] + ' ' + end.getDate() + '.',
-      en: EN_MONTHS[start.getMonth()] + ' ' + start.getDate() + '\u2013' + EN_MONTHS[end.getMonth()] + ' ' + end.getDate()
+      hu: HU_MONTHS[start.getMonth()] + ' ' + start.getDate() + '–' + HU_MONTHS[end.getMonth()] + ' ' + end.getDate() + '.',
+      en: EN_MONTHS[start.getMonth()] + ' ' + start.getDate() + '–' + EN_MONTHS[end.getMonth()] + ' ' + end.getDate()
     };
   }
 
