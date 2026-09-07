@@ -1,2 +1,0 @@
-var m = description.match(/kat(?:eg[oó]ria)?:\s*([^\r\n]+)/i);
-var re = /[̀-ͯ]/g;
