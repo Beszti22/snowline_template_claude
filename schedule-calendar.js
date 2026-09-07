@@ -13,13 +13,27 @@
   var HU_MONTHS = ['jan.', 'febr.', 'márc.', 'ápr.', 'máj.', 'jún.', 'júl.', 'aug.', 'szept.', 'okt.', 'nov.', 'dec.'];
   var EN_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  // Pick these colors in the Google Calendar event editor to control the category badge.
-  var CATEGORY_MAP = {
-    '11': { hu: 'IFI VERSENY', en: 'Youth race', cls: 'tag-race' },        // Tomato (red)
-    '10': { hu: 'SERDÜLŐ VERSENY', en: 'Junior race', cls: 'tag-junior' }, // Basil (green)
-    '7': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' },               // Peacock (blue)
-    '5': { hu: 'UTAZÁS', en: 'Travel', cls: 'tag-travel' },                // Banana (lemon yellow)
-    '8': { hu: 'PIHENŐ', en: 'Rest', cls: 'tag-event' }                    // Graphite (grey)
+  // Category badge is controlled by a "kategória: ..." line in the event's description
+  // (see extractCategoryTag below), NOT by the Google Calendar event color anymore.
+  // Google's newer "Labels" feature in the Calendar UI replaced the classic per-event
+  // colorId, and that Labels data isn't readable through a plain public API key —
+  // so as of 2026-09-07 the color-based mapping no longer works and was replaced.
+  var CATEGORY_BY_TAG = {
+    'ifi verseny': { hu: 'IFI VERSENY', en: 'Youth race', cls: 'tag-race' },
+    'ifjusagi verseny': { hu: 'IFI VERSENY', en: 'Youth race', cls: 'tag-race' },
+    'serdulo verseny': { hu: 'SERDÜLŐ VERSENY', en: 'Junior race', cls: 'tag-junior' },
+    'edzes': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' },
+    'utazas': { hu: 'UTAZÁS', en: 'Travel', cls: 'tag-travel' },
+    'piheno': { hu: 'PIHENŐ', en: 'Rest', cls: 'tag-event' }
+  };
+  // Legacy fallback: kept in case colorId is ever populated again (e.g. a different
+  // calendar/account without Labels enabled). Harmless if it's never matched.
+  var CATEGORY_BY_COLOR = {
+    '11': CATEGORY_BY_TAG['ifi verseny'],
+    '10': CATEGORY_BY_TAG['serdulo verseny'],
+    '7': CATEGORY_BY_TAG['edzes'],
+    '5': CATEGORY_BY_TAG['utazas'],
+    '8': CATEGORY_BY_TAG['piheno']
   };
   var DEFAULT_CATEGORY = { hu: 'ESEMÉNY', en: 'Event', cls: 'tag-event' };
 
@@ -39,6 +53,29 @@
     if (!description) return null;
     var m = description.match(/c[íi]mke:\s*(.+)/i);
     return m ? m[1].trim() : null;
+  }
+
+  // Lowercase + strip Hungarian accents, so "Edzés", "EDZÉS", "edzes" all match the same key.
+  function normalizeTag(s) {
+    return s
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  // Reads a "kategória: <szöveg>" (or "kat: <szöveg>") line from the event description.
+  function extractCategoryTag(description) {
+    if (!description) return null;
+    var m = description.match(/kat(?:eg[oó]ria)?:\s*([^\r\n]+)/i);
+    return m ? normalizeTag(m[1]) : null;
+  }
+
+  function resolveCategory(ev) {
+    var tag = extractCategoryTag(ev.description);
+    if (tag && CATEGORY_BY_TAG[tag]) return CATEGORY_BY_TAG[tag];
+    if (ev.colorId && CATEGORY_BY_COLOR[ev.colorId]) return CATEGORY_BY_COLOR[ev.colorId];
+    return DEFAULT_CATEGORY;
   }
 
   function computeLabel(startPart, endPart) {
@@ -66,7 +103,7 @@
   }
 
   function buildRow(ev) {
-    var category = CATEGORY_MAP[ev.colorId] || DEFAULT_CATEGORY;
+    var category = resolveCategory(ev);
     var override = extractOverride(ev.description);
     var label = override ? { hu: override, en: override } : computeLabel(ev.start, ev.end);
 
