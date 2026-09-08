@@ -208,13 +208,12 @@
       linear-gradient(100deg, rgba(6,14,28,0.94) 0%, rgba(6,14,28,0.74) 26%, rgba(6,14,28,0.16) 52%, transparent 68%),
       linear-gradient(0deg, rgba(6,14,28,0.5) 0%, transparent 34%);
   }
-  /* Mountain-ridge skyline where the hero meets the page below */
+  /* Clean fade where the hero meets the page below */
   .hero-visual::after{
-    content:"";position:absolute;left:0;right:0;bottom:-1px;height:56px;z-index:2;pointer-events:none;
-    background:var(--color-surface);
-    clip-path:polygon(0% 100%,0% 55%,7% 78%,14% 30%,21% 68%,29% 15%,37% 58%,45% 22%,53% 62%,61% 12%,69% 50%,77% 20%,85% 66%,93% 28%,100% 55%,100% 100%);
+    content:"";position:absolute;left:0;right:0;bottom:0;height:80px;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg, transparent 0%, var(--color-surface) 100%);
   }
-  @media (max-width:760px){ .hero-visual::after{height:28px;} }
+  @media (max-width:760px){ .hero-visual::after{height:48px;} }
   .hero-inner{
     position:absolute;inset:0;z-index:2;display:flex;align-items:center;text-align:left;padding-top:76px;
   }
