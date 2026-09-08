@@ -412,21 +412,16 @@
     .schedule-row .tag{grid-area:tags;justify-self:start;}
   }
 
-  /* ---------- GALLERY ---------- */
+  /* ---------- GALLERY (Pinterest-style masonry) ---------- */
   .gallery-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:140px;gap:16px;
+    column-count:4;column-gap:16px;
   }
-  .gallery-grid .placeholder-block{border-radius:var(--radius-md);height:100%;}
-  .g-tall{grid-row:span 2;}
-  .g-wide{grid-column:span 2;}
-  @media (max-width:900px){
-    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px;}
-    .g-wide{grid-column:span 2;}
+  .gallery-grid .g-item{
+    break-inside:avoid;-webkit-column-break-inside:avoid;margin-bottom:16px;border-radius:var(--radius-md);overflow:hidden;
   }
-  @media (max-width:520px){
-    .gallery-grid{grid-template-columns:1fr;}
-    .g-wide,.g-tall{grid-column:span 1;grid-row:span 1;}
-  }
+  @media (max-width:900px){ .gallery-grid{column-count:3;column-gap:12px;} .gallery-grid .g-item{margin-bottom:12px;} }
+  @media (max-width:640px){ .gallery-grid{column-count:2;} }
+  @media (max-width:420px){ .gallery-grid{column-count:1;} }
 
   /* ---------- LIGHTBOX ---------- */
   .lightbox{
@@ -449,6 +444,23 @@
     display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease;
   }
   .lightbox-close:hover{background:rgba(255,255,255,0.18);}
+  .lightbox-nav{
+    position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#fff;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease;z-index:5;
+  }
+  .lightbox-nav:hover{background:rgba(255,255,255,0.18);}
+  .lightbox-prev{left:20px;}
+  .lightbox-next{right:20px;}
+  .lightbox-counter{
+    position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.75);
+    font-size:13px;letter-spacing:0.04em;
+  }
+  @media (max-width:640px){
+    .lightbox-nav{width:40px;height:40px;}
+    .lightbox-prev{left:8px;}
+    .lightbox-next{right:8px;}
+  }
 
   /* ---------- TESTIMONIALS ---------- */
   .testimonials{background:var(--color-primary);color:#fff;margin-bottom:0;padding-bottom:48px;}
@@ -662,7 +674,7 @@
 
   /* ---------- REAL PHOTOS IN PLACEHOLDER SLOTS ---------- */
   .coach-avatar img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
-  .gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius-md);display:block;cursor:pointer;transition:transform .35s ease, filter .35s ease;}
+  .gallery-grid img{width:100%;height:auto;display:block;cursor:pointer;transition:transform .35s ease, filter .35s ease;}
   .gallery-grid img:hover{transform:scale(1.03);filter:brightness(1.05);}
   .gallery-grid img:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px;}
   .about-media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-lg);display:block;box-shadow:var(--shadow-md);}
