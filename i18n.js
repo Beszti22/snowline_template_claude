@@ -159,7 +159,9 @@
       footerNewsletterLabel: `Email address`,
       footerNewsletterPh: `Your email`,
       footerCopyright: `© 2026 Snowline Alpine Ski Club. All rights reserved.`,
-      footerTemplateNote: `snowline.hu · Facebook: Snowline Ski Team`
+      footerTemplateNote: `snowline.hu · Facebook: Snowline Ski Team`,
+      footerCredit: `Készítette: Sharpline`,
+      footerCredit: `Made by Sharpline`
     },
     hu: {
       skip: `Ugrás a tartalomra`,
