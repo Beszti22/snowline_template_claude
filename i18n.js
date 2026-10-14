@@ -144,7 +144,7 @@
       formMessage: `Message`,
       formMessagePh: `Tell us about the athlete's experience level...`,
       privacyNoteText: `We only use this information to respond to your inquiry about our ski programmes and never share it with third parties.`,
-      formConsent: `I agree that Snowline Alpine Ski Club may use the information above to respond to this inquiry.`,
+      formConsent: `I agree that Snowline Alpine Ski Club may use the information above to respond to this inquiry (<a href="/adatvedelem.html" target="_blank">privacy policy</a>).`,
       formSubmit: `Send message`,
       formNote: `We'll get back to you soon. You can also reach us directly at snowline.hu or on Facebook: Snowline Ski Team.`,
       formSending: `Sending...`,
@@ -159,7 +159,7 @@
       footerNewsletterLabel: `Email address`,
       footerNewsletterPh: `Your email`,
       footerCopyright: `© 2026 Snowline Alpine Ski Club. All rights reserved.`,
-      footerTemplateNote: `snowline.hu · Facebook: Snowline Ski Team`,
+      footerTemplateNote: `<a href="/impresszum.html">Legal notice</a> · <a href="/adatvedelem.html">Privacy policy</a>`,
       footerCredit: `Made by Beszterczey Web`
     },
     hu: {
@@ -307,7 +307,7 @@
       formMessage: `Üzenet`,
       formMessagePh: `Írd le, milyen szinten síel a sportoló...`,
       privacyNoteText: `Az adatokat kizárólag az érdeklődésed megválaszolására használjuk, harmadik féllel nem osztjuk meg.`,
-      formConsent: `Hozzájárulok, hogy a Snowline Alpesi Síklub a fenti adatokat az érdeklődésem megválaszolására felhasználja.`,
+      formConsent: `Hozzájárulok, hogy a Snowline Alpesi Síklub a fenti adatokat az érdeklődésem megválaszolására felhasználja (<a href="/adatvedelem.html" target="_blank">adatvédelmi tájékoztató</a>).`,
       formSubmit: `Üzenet küldése`,
       formNote: `Hamarosan válaszolunk. Közvetlenül is elérsz minket: snowline.hu vagy Facebook: Snowline Ski Team.`,
       formSending: `Küldés folyamatban...`,
@@ -322,7 +322,7 @@
       footerNewsletterLabel: `E-mail cím`,
       footerNewsletterPh: `E-mail címed`,
       footerCopyright: `© 2026 Snowline Alpesi Síklub. Minden jog fenntartva.`,
-      footerTemplateNote: `snowline.hu · Facebook: Snowline Ski Team`,
+      footerTemplateNote: `<a href="/impresszum.html">Impresszum</a> · <a href="/adatvedelem.html">Adatvédelmi tájékoztató</a>`,
       footerCredit: `Készítette: Beszterczey Web`
     }
   };
