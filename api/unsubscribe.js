@@ -35,7 +35,11 @@ module.exports = async (req, res) => {
       }
     );
 
-    if (!resp.ok) {
+    // A 404 here means the address was never added to the Audience (e.g. the
+    // person clicked "unsubscribe" straight from the first confirmation email
+    // without ever confirming). That's not an error — the end state they
+    // wanted (not receiving the newsletter) is already true.
+    if (!resp.ok && resp.status !== 404) {
       const errText = await resp.text();
       console.error('Resend error (unsubscribe):', resp.status, errText);
       res.writeHead(302, { Location: '/leiratkozva.html?status=error' });

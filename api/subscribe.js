@@ -6,6 +6,7 @@
 const { createToken } = require('./_lib/subscribeTokens');
 
 const CONFIRM_TTL_MS = 48 * 60 * 60 * 1000; // 48 hours
+const UNSUB_TTL_MS = 365 * 24 * 60 * 60 * 1000; // 1 year
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
@@ -45,6 +46,12 @@ module.exports = async (req, res) => {
   const confirmToken = createToken('confirm_sub', normalizedEmail, CONFIRM_TTL_MS);
   const confirmUrl = `${siteUrl}/api/confirm-subscription?token=${encodeURIComponent(confirmToken)}`;
 
+  // Issued up front so the unsubscribe link already works from this very
+  // first email, even before the address is added to the Resend Audience
+  // (unsubscribe.js treats "contact not found" as a harmless no-op).
+  const unsubToken = createToken('unsub', normalizedEmail, UNSUB_TTL_MS);
+  const unsubUrl = `${siteUrl}/api/unsubscribe?token=${encodeURIComponent(unsubToken)}`;
+
   const html = `
     <div style="font-family:sans-serif;color:#0A1A30;max-width:480px;">
       <h2 style="color:#0A1A30;">Erősítsd meg a feliratkozást / Confirm your subscription</h2>
@@ -54,7 +61,7 @@ module.exports = async (req, res) => {
         <a href="${confirmUrl}" style="background:#0A1A30;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold;display:inline-block;">Feliratkozás megerősítése</a>
       </p>
       <p style="color:#54657C;font-size:13px;">Hi! Almost done — click the button above to confirm your subscription to the Snowline Alpine Ski Club newsletter. The link is valid for 48 hours.</p>
-      <p style="color:#54657C;font-size:12px;">Ha nem te kérted ezt a feliratkozást, nyugodtan hagyd figyelmen kívül ezt az e-mailt. / If you didn't request this, you can safely ignore this email.</p>
+      <p style="color:#54657C;font-size:12px;">Ha nem te kérted ezt a feliratkozást, nyugodtan hagyd figyelmen kívül ezt az e-mailt, vagy kattints ide a biztonság kedvéért: <a href="${unsubUrl}" style="color:#54657C;">leiratkozás</a>. / If you didn't request this, you can safely ignore this email, or click here just to be sure: <a href="${unsubUrl}" style="color:#54657C;">unsubscribe</a>.</p>
     </div>
   `;
 
