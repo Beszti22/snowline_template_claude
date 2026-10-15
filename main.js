@@ -149,4 +149,57 @@
       touchStartX = null;
     }, { passive: true });
   }
+
+  /* ----- Newsletter signup (footer form, present on every page) ----- */
+  var newsletterForm = document.getElementById('newsletterForm');
+  if(newsletterForm){
+    var nlEmailInput = document.getElementById('newsletterEmail');
+    var nlConsentInput = document.getElementById('newsletterConsent');
+    var nlBotcheckInput = document.getElementById('newsletterBotcheck');
+    var nlSubmitBtn = document.getElementById('newsletterSubmitBtn');
+    var nlStatus = document.getElementById('newsletterStatus');
+    var nlSendingText = document.getElementById('i18nNewsletterSending');
+    var nlSuccessText = document.getElementById('i18nNewsletterSuccess');
+    var nlErrorText = document.getElementById('i18nNewsletterError');
+
+    newsletterForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!newsletterForm.checkValidity()){ newsletterForm.reportValidity(); return; }
+
+      nlStatus.textContent = '';
+      nlStatus.classList.remove('is-error', 'is-success');
+      nlSubmitBtn.disabled = true;
+      if(nlSendingText){ nlStatus.textContent = nlSendingText.textContent; }
+
+      var payload = {
+        email: nlEmailInput.value,
+        consent: nlConsentInput.checked,
+        botcheck: nlBotcheckInput.value
+      };
+
+      fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(json){
+          return { ok: res.ok && json.ok, json: json };
+        });
+      }).then(function(result){
+        nlSubmitBtn.disabled = false;
+        if(result.ok){
+          nlStatus.textContent = nlSuccessText ? nlSuccessText.textContent : '';
+          nlStatus.classList.add('is-success');
+          newsletterForm.reset();
+        } else {
+          nlStatus.textContent = nlErrorText ? nlErrorText.textContent : '';
+          nlStatus.classList.add('is-error');
+        }
+      }).catch(function(){
+        nlSubmitBtn.disabled = false;
+        nlStatus.textContent = nlErrorText ? nlErrorText.textContent : '';
+        nlStatus.classList.add('is-error');
+      });
+    });
+  }
 })();
