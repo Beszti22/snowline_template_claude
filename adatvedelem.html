@@ -58,7 +58,8 @@
 <main id="main">
 
 <!-- ADATVÉDELMI TÁJÉKOZTATÓ — GDPR (EU 2016/679) 13. cikk szerinti tájékoztatás a weboldal adatkezeléseiről:
-     kapcsolatfelvételi űrlap (Vercel + Resend), Google Fonts, nyelvválasztás (localStorage). Sütit az oldal nem használ. -->
+     kapcsolatfelvételi űrlap (Vercel + Resend), hírlevél-feliratazás (Resend Audiences, double opt-in), Google Fonts,
+     nyelvválasztás (localStorage). Sütit az oldal nem használ. -->
   <section class="legal">
     <div class="container legal-wrap">
 
@@ -84,28 +85,37 @@
         </dl>
         <p><strong>Kiskorúak:</strong> 16 év alatti sportoló adatait kizárólag a szülő vagy törvényes képviselő adhatja meg. Kérjük, csak a jelentkezéshez szükséges adatokat írd le az üzenetben.</p>
 
-        <h2>3. Adatfeldolgozók és címzettek</h2>
+        <h2>3. Hírlevél feliratkozás</h2>
+        <dl class="legal-dl">
+          <dt>Kezelt adat</dt><dd>e-mail cím</dd>
+          <dt>Cél</dt><dd>szezonhírek, versenyeredmények és programváltozások e-mailben történő megküldése</dd>
+          <dt>Jogalap</dt><dd>az érintett hozzájárulása (GDPR 6. cikk (1) a) pont), amelyet a feliratkozási űrlap jelölőnégyzetével adsz meg</dd>
+          <dt>Folyamat</dt><dd>a feliratkozás megerősítő e-mail (double opt-in) útján aktiválódik: a feliratkozás csak a megerősítő linkre kattintva válik élővé, amely 48 óráig érvényes</dd>
+          <dt>Időtartam</dt><dd>a hozzájárulás visszavonásáig, azaz a leiratkozásig; a leiratkozás minden hírlevelben egy kattintással elérhető</dd>
+        </dl>
+
+        <h2>4. Adatfeldolgozók és címzettek</h2>
         <p>Az adatokat nem adjuk el és nem adjuk át harmadik félnek marketingcélra. A weboldal működéséhez az alábbi szolgáltatókat vesszük igénybe:</p>
         <ul class="legal-list">
           <li><strong>Vercel Inc.</strong> (USA) — tárhely és az űrlapot feldolgozó szerverfunkció; a szerver technikai naplókat (pl. IP-cím, időpont) rövid ideig tárol.</li>
-          <li><strong>Resend</strong> (resend.com, USA) — az űrlap tartalmának e-mailben történő továbbítása az egyesület postafiókjába.</li>
+          <li><strong>Resend</strong> (resend.com, USA) — a kapcsolatfelvételi űrlap tartalmának e-mailben történő továbbítása az egyesület postafókjába, valamint a hírlevél-feliratkozók listájának kezelése és a megerősítő e-mail kiküldése.</li>
           <li><strong>Google</strong> (Google Fonts) — az oldal betűtípusai a Google szervereiről töltődnek be, ennek során a böngésződ IP-címe a Google-höz kerül.</li>
         </ul>
         <p>Az USA-beli szolgáltatók esetén az adattovábbítás az Európai Bizottság által elfogadott általános szerződési feltételek, illetve az EU–USA adatvédelmi keretrendszer alapján történik.</p>
 
-        <h2>4. Sütik és helyi tárolás</h2>
+        <h2>5. Sütik és helyi tárolás</h2>
         <p>A weboldal nem használ sütiket, analitikát vagy hirdetési követőkódot. A böngésződ helyi tárhelyén (localStorage) kizárólag a választott nyelvet (HU/EN) jegyezzük meg, hogy oldalváltáskor ne kelljen újra kiválasztanod. Ez a böngésződ beállításaiban bármikor törölhető.</p>
 
-        <h2>5. Jogaid</h2>
+        <h2>6. Jogaid</h2>
         <p>Kérheted a rólad kezelt adatokhoz való hozzáférést, azok helyesbítését, törlését, a kezelés korlátozását, az adathordozhatóságot, és tiltakozhatsz az adatkezelés ellen. Hozzájárulásodat bármikor visszavonhatod; ez nem érinti a visszavonás előtti adatkezelés jogszerűségét. Kérésedet az <a href="mailto:info@snowline.hu">info@snowline.hu</a> címre küldd; legfeljebb 30 napon belül válaszolunk.</p>
 
-        <h2>6. Jogorvoslat</h2>
-        <p>Panasszal fordulhatsz a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH; 1055 Budapest, Falk Miksa utca 9–11.; postacím: 1363 Budapest, Pf. 9.; <a href="https://www.naih.hu" target="_blank" rel="noopener">naih.hu</a>; ugyfelszolgalat@naih.hu), illetve bírósághoz is fordulhatsz, amely a lakóhelyed szerinti törvényszék is lehet.</p>
+        <h2>7. Jogorvoslat</h2>
+        <p>Panasszal fordulhatsz a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH; 1055 Budapest, Falk Mikssa utca 9–11.; postacím: 1363 Budapest, Pf. 9.; <a href="https://www.naih.hu" target="_blank" rel="noopener">naih.hu</a>; ugyfelszolgalat@naih.hu), illetve bírósághoz is fordulhatsz, amely a lakóhelyed szerinti törvényszék is lehet.</p>
 
-        <h2>7. Adatbiztonság</h2>
+        <h2>8. Adatbiztonság</h2>
         <p>A weboldal titkosított (HTTPS) kapcsolaton keresztül érhető el, az űrlap adatait nem tároljuk adatbázisban, azok kizárólag e-mailben jutnak el az egyesülethez.</p>
 
-        <p class="legal-meta">Hatályos: 2026. október 14. · Lásd még: <a href="/impresszum.html">Impresszum</a></p>
+        <p class="legal-meta">Hatályos: 2026. október 15. · Lásd még: <a href="/impresszum.html">Impresszum</a></p>
       </div>
 
       <div lang="en">
@@ -130,28 +140,37 @@
         </dl>
         <p><strong>Minors:</strong> data of athletes under 16 may only be submitted by a parent or legal guardian. Please only include information needed for the sign-up in your message.</p>
 
-        <h2>3. Processors and recipients</h2>
+        <h2>3. Newsletter subscription</h2>
+        <dl class="legal-dl">
+          <dt>Data processed</dt><dd>email address</dd>
+          <dt>Purpose</dt><dd>sending season announcements, race results and schedule changes by email</dd>
+          <dt>Legal basis</dt><dd>your consent (Art. 6(1)(a) GDPR), given by ticking the checkbox on the signup form</dd>
+          <dt>Process</dt><dd>subscriptions use double opt-in: your subscription only becomes active once you click the confirmation link sent by email, which is valid for 48 hours</dd>
+          <dt>Retention</dt><dd>until you withdraw consent, i.e. unsubscribe; an unsubscribe link is included with every newsletter</dd>
+        </dl>
+
+        <h2>4. Processors and recipients</h2>
         <p>We do not sell your data or share it with third parties for marketing. We use the following providers to run the website:</p>
         <ul class="legal-list">
           <li><strong>Vercel Inc.</strong> (USA) — hosting and the server function that handles the form; the server keeps technical logs (e.g. IP address, time) for a short period.</li>
-          <li><strong>Resend</strong> (resend.com, USA) — delivers the form contents by email to the club's mailbox.</li>
+          <li><strong>Resend</strong> (resend.com, USA) — delivers the contact form contents by email to the club's mailbox, and manages the newsletter subscriber list and the confirmation email.</li>
           <li><strong>Google</strong> (Google Fonts) — the site's fonts are loaded from Google's servers, which means your browser's IP address is sent to Google.</li>
         </ul>
         <p>Transfers to US providers rely on the European Commission's standard contractual clauses or the EU–US Data Privacy Framework.</p>
 
-        <h2>4. Cookies and local storage</h2>
+        <h2>5. Cookies and local storage</h2>
         <p>This website uses no cookies, analytics or advertising trackers. Only your selected language (HU/EN) is saved in your browser's local storage so you don't have to choose it again on every page. You can clear it at any time in your browser settings.</p>
 
-        <h2>5. Your rights</h2>
+        <h2>6. Your rights</h2>
         <p>You may request access to, rectification or erasure of your data, restriction of processing and data portability, and you may object to processing. You can withdraw your consent at any time without affecting the lawfulness of prior processing. Send your request to <a href="mailto:info@snowline.hu">info@snowline.hu</a>; we reply within 30 days.</p>
 
-        <h2>6. Remedies</h2>
-        <p>You may lodge a complaint with the Hungarian National Authority for Data Protection and Freedom of Information (NAIH; Falk Miksa utca 9–11., 1055 Budapest; postal: 1363 Budapest, Pf. 9.; <a href="https://www.naih.hu" target="_blank" rel="noopener">naih.hu</a>; ugyfelszolgalat@naih.hu) or go to court, including the regional court of your place of residence.</p>
+        <h2>7. Remedies</h2>
+        <p>You may lodge a complaint with the Hungarian National Authority for Data Protection and Freedom of Information (NAIH; Falk Mikssa utca 9–11., 1055 Budapest; postal: 1363 Budapest, Pf. 9.; <a href="https://www.naih.hu" target="_blank" rel="noopener">naih.hu</a>; ugyfelszolgalat@naih.hu) or go to court, including the regional court of your place of residence.</p>
 
-        <h2>7. Security</h2>
+        <h2>8. Security</h2>
         <p>The website is served over an encrypted (HTTPS) connection. Form submissions are not stored in a database; they are only delivered to the club by email.</p>
 
-        <p class="legal-meta">Effective: 14 October 2026 · See also: <a href="/impresszum.html">Legal notice</a></p>
+        <p class="legal-meta">Effective: 15 October 2026 · See also: <a href="/impresszum.html">Legal notice</a></p>
       </div>
 
     </div>
@@ -217,12 +236,24 @@
     <div class="footer-col">
       <h4 data-i18n="footerStayUpdated">Stay Updated</h4>
       <p style="font-size:14px;margin-bottom:14px;" data-i18n="footerNewsletterDesc">Season announcements, race results and schedule changes — straight to your inbox.</p>
-      <form class="newsletter" onsubmit="event.preventDefault();">
+      <form class="newsletter" id="newsletterForm" novalidate>
         <label for="newsletterEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);" data-i18n="footerNewsletterLabel">Email address</label>
-        <input type="email" id="newsletterEmail" placeholder="Your email" required data-i18n-placeholder="footerNewsletterPh">
-        <button type="submit" aria-label="Subscribe">
+        <input type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Your email" required data-i18n-placeholder="footerNewsletterPh">
+        <button type="submit" aria-label="Subscribe" id="newsletterSubmitBtn">
           <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </button>
+        <label class="newsletter-consent-row" for="newsletterConsent" style="display:flex;gap:6px;align-items:flex-start;font-size:12px;line-height:1.4;margin-top:10px;">
+          <input type="checkbox" id="newsletterConsent" required style="margin-top:2px;flex-shrink:0;">
+          <span data-i18n="footerNewsletterConsent">I agree that Snowline Alpine Ski Club may send newsletter emails to this address, and that I can unsubscribe at any time (<a href="/adatvedelem.html" target="_blank">privacy policy</a>).</span>
+        </label>
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label for="newsletterBotcheck">Leave this field empty</label>
+          <input type="text" id="newsletterBotcheck" name="newsletterBotcheck" tabindex="-1" autocomplete="off">
+        </div>
+        <p class="newsletter-status" id="newsletterStatus" role="status" style="font-size:12px;margin-top:8px;min-height:14px;"></p>
+        <span id="i18nNewsletterSending" data-i18n="footerNewsletterSending" hidden>Sending...</span>
+        <span id="i18nNewsletterSuccess" data-i18n="footerNewsletterSuccess" hidden>Almost done — check your inbox to confirm your subscription.</span>
+        <span id="i18nNewsletterError" data-i18n="footerNewsletterError" hidden>Something went wrong. Please try again later.</span>
       </form>
     </div>
   </div>
