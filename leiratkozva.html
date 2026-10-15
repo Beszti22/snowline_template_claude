@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Snowline" />
+<link rel="manifest" href="/site.webmanifest" />
+<title>Leiratkozás — Snowline Alpesi Síklub</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand">
+      <img src="/assets/logo-icon.png" alt="Snowline" class="brand-icon-img">
+      <span class="brand-text">
+        <span class="brand-name">Snowline</span>
+        <span class="brand-sub">Alpine Racing Team</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="legal">
+    <div class="container legal-wrap" style="text-align:center;max-width:560px;">
+
+      <div id="stateOk">
+        <div lang="hu">
+          <h1>Leiratkoztunk</h1>
+          <p class="legal-lead">Többé nem küldünk hírlevelet erre a címre. Ha meggondolod magad, bármikor újra feliratkozhatsz a snowline.hu oldalon.</p>
+        </div>
+        <div lang="en" style="margin-top:20px;">
+          <h1>You've been unsubscribed</h1>
+          <p class="legal-lead">We won't send any more newsletters to this address. You can subscribe again any time on snowline.hu.</p>
+        </div>
+      </div>
+
+      <div id="stateError" hidden>
+        <div lang="hu">
+          <h1>A link lejárt vagy érvénytelen</h1>
+          <p class="legal-lead">Írj nekünk az <a href="mailto:info@snowline.hu">info@snowline.hu</a> címre, és levesszük a listáról.</p>
+        </div>
+        <div lang="en" style="margin-top:20px;">
+          <h1>This link expired or is invalid</h1>
+          <p class="legal-lead">Email us at <a href="mailto:info@snowline.hu">info@snowline.hu</a> and we'll remove you from the list.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:32px;"><a href="/" class="btn btn-primary">Vissza a főoldalra / Back to homepage</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-bottom" style="justify-content:center;">
+    <span>© 2026 Snowline Alpesi Síklub</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var status = params.get('status');
+  if(status === 'error'){
+    document.getElementById('stateOk').hidden = true;
+    document.getElementById('stateError').hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
