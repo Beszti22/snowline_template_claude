@@ -607,6 +607,11 @@
 
   /* ---------- FOOTER ---------- */
   footer{background:#081629;color:rgba(255,255,255,0.85);padding:72px 0 0;margin-top:0;border-top:none;}
+  .newsletter-consent-row{color:rgba(255,255,255,0.65);}
+  .newsletter-consent-row input[type="checkbox"]{accent-color:var(--color-accent, #4F9CF9);}
+  .newsletter-consent-row a{color:rgba(255,255,255,0.85);text-decoration:underline;}
+  .newsletter-status.is-success{color:#6EE7B7;}
+  .newsletter-status.is-error{color:#FCA5A5;}
   .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.1);}
   .footer-brand .brand{margin-bottom:14px;}
   .footer-brand p{font-size:14px;line-height:1.7;max-width:280px;}
@@ -752,7 +757,7 @@
 .partner-card img {
   height: 56px;       /* 38px helyett 56px – sokkal hangsúlyosabb és tisztán olvasható */
   width: auto;
-  max-width: 190px;   /* 145px helyett 190px, hogy a széles logók se nyomódjanak össze */
+  max-width: 190px;   /* 145px helyett 190px, hogy a széles logók se nyómódjanak össze */
   object-fit: contain;
   opacity: 0.75;      /* Kicsit világosabb alapból is, hogy jobban kivehető legyen */
   filter: grayscale(100%) brightness(1.2) drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
