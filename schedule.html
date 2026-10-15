@@ -130,12 +130,24 @@
     <div class="footer-col">
       <h4 data-i18n="footerStayUpdated">Stay Updated</h4>
       <p style="font-size:14px;margin-bottom:14px;" data-i18n="footerNewsletterDesc">Season announcements, race results and schedule changes — straight to your inbox.</p>
-      <form class="newsletter" onsubmit="event.preventDefault();">
+      <form class="newsletter" id="newsletterForm" novalidate>
         <label for="newsletterEmail" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);" data-i18n="footerNewsletterLabel">Email address</label>
-        <input type="email" id="newsletterEmail" placeholder="Your email" required data-i18n-placeholder="footerNewsletterPh">
-        <button type="submit" aria-label="Subscribe">
+        <input type="email" id="newsletterEmail" name="newsletterEmail" placeholder="Your email" required data-i18n-placeholder="footerNewsletterPh">
+        <button type="submit" aria-label="Subscribe" id="newsletterSubmitBtn">
           <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </button>
+        <label class="newsletter-consent-row" for="newsletterConsent" style="display:flex;gap:6px;align-items:flex-start;font-size:12px;line-height:1.4;margin-top:10px;">
+          <input type="checkbox" id="newsletterConsent" required style="margin-top:2px;flex-shrink:0;">
+          <span data-i18n="footerNewsletterConsent">I agree that Snowline Alpine Ski Club may send newsletter emails to this address, and that I can unsubscribe at any time (<a href="/adatvedelem.html" target="_blank">privacy policy</a>).</span>
+        </label>
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label for="newsletterBotcheck">Leave this field empty</label>
+          <input type="text" id="newsletterBotcheck" name="newsletterBotcheck" tabindex="-1" autocomplete="off">
+        </div>
+        <p class="newsletter-status" id="newsletterStatus" role="status" style="font-size:12px;margin-top:8px;min-height:14px;"></p>
+        <span id="i18nNewsletterSending" data-i18n="footerNewsletterSending" hidden>Sending...</span>
+        <span id="i18nNewsletterSuccess" data-i18n="footerNewsletterSuccess" hidden>Almost done — check your inbox to confirm your subscription.</span>
+        <span id="i18nNewsletterError" data-i18n="footerNewsletterError" hidden>Something went wrong. Please try again later.</span>
       </form>
     </div>
   </div>
