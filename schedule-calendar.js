@@ -14,7 +14,7 @@
   var EN_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   // Category badge is controlled by a "kategória: ..." line in the event's description
-  // ( see extractCategoryTag below), NOT by the Google Calendar event color anymore.
+  // (see extractCategoryTag below), NOT by the Google Calendar event color anymore.
   // Google's newer "Labels" feature in the Calendar UI replaced the classic per-event
   // colorId, and that Labels data isn't readable through a plain public API key —
   // so as of 2026-09-07 the color-based mapping no longer works and was replaced.
@@ -38,7 +38,7 @@
   var DEFAULT_CATEGORY = { hu: 'ESEMÉNY', en: 'Event', cls: 'tag-event' };
 
   var TEXT = {
-    hu: { calLink: 'Teljes naptár megniyása', empty: 'Jelenleg nincs meghirdetett közelgő program.' },
+    hu: { calLink: 'Teljes naptár megnyitása', empty: 'Jelenleg nincs meghirdetett közelgő program.' },
     en: { calLink: 'Open full calendar', empty: 'No upcoming events are scheduled right now.' }
   };
 
@@ -221,7 +221,6 @@
     })
     .catch(function (err) {
       // Leave the static fallback rows already in schedule.html untouched.
-      console.warn('Snowline: live schedule could not be loaded, showing static fallback.', err)
-;
+      console.warn('Snowline: live schedule could not be loaded, showing static fallback.', err);
     });
 })();
