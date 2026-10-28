@@ -80,7 +80,7 @@
     var isRace = /verseny|kupa/.test(t);
     if (isRace && /\bifi\b|ifjusagi/.test(t)) return CATEGORY_BY_TAG['ifi verseny'];
     if (isRace && /serdulo/.test(t)) return CATEGORY_BY_TAG['serdulo verseny'];
-    if (/edzes/.test(t)) return CATEGORY_BY_TAG['edzes'];
+    if (/edz[eo]/.test(t)) return CATEGORY_BY_TAG['edzes'];
     if (/utaz/.test(t)) return CATEGORY_BY_TAG['utazas'];
     if (/piheno|szunet/.test(t)) return CATEGORY_BY_TAG['piheno'];
     return null;
