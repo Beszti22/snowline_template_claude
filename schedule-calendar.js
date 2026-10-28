@@ -19,8 +19,8 @@
   // colorId, and that Labels data isn't readable through a plain public API key —
   // so as of 2026-09-07 the color-based mapping no longer works and was replaced.
   var CATEGORY_BY_TAG = {
-    'ifi verseny': { hu: 'IFI VERSENY', en: 'Youth race', cls: 'tag-race' },
-    'ifjusagi verseny': { hu: 'IFI VERSENY', en: 'Youth race', cls: 'tag-race' },
+    'ifi verseny': { hu: 'FIS VERSENY', en: 'Youth race', cls: 'tag-race' },
+    'ifjusagi verseny': { hu: 'FIS VERSENY', en: 'Youth race', cls: 'tag-race' },
     'serdulo verseny': { hu: 'SERDÜLŐ VERSENY', en: 'Junior race', cls: 'tag-junior' },
     'edzes': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' },
     'utazas': { hu: 'UTAZÁS', en: 'Travel', cls: 'tag-travel' },
