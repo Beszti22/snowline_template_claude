@@ -22,6 +22,7 @@
     'ifi verseny': { hu: 'FIS VERSENY', en: 'Youth race', cls: 'tag-race' },
     'ifjusagi verseny': { hu: 'FIS VERSENY', en: 'Youth race', cls: 'tag-race' },
     'serdulo verseny': { hu: 'SERDÜLŐ VERSENY', en: 'Junior race', cls: 'tag-junior' },
+    'verseny': { hu: 'VERSENY', en: 'Race', cls: 'tag-race' },
     'edzes': { hu: 'EDZÉS', en: 'Training', cls: 'tag-training' },
     'utazas': { hu: 'UTAZÁS', en: 'Travel', cls: 'tag-travel' },
     'piheno': { hu: 'PIHENŐ', en: 'Rest', cls: 'tag-event' }
@@ -80,6 +81,9 @@
     var isRace = /verseny|kupa/.test(t);
     if (isRace && /\bifi\b|ifjusagi|\bfis\b/.test(t)) return CATEGORY_BY_TAG['ifi verseny'];
     if (isRace && /serdulo/.test(t)) return CATEGORY_BY_TAG['serdulo verseny'];
+    // "Kupa" events (e.g. "Magyar Kupa futam") are races even with no ifi/serdülő
+    // qualifier in the name — fall back to the generic race tag instead of "Event".
+    if (isRace) return CATEGORY_BY_TAG['verseny'];
     if (/edz[eo]/.test(t)) return CATEGORY_BY_TAG['edzes'];
     if (/utaz/.test(t)) return CATEGORY_BY_TAG['utazas'];
     if (/piheno|szunet/.test(t)) return CATEGORY_BY_TAG['piheno'];
